@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="contestForm" ID="#p#contestsDone" TYPE="action"
+  PATH="/p/contestsDone" SHAPE="32,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="uploadByType" ID="uploadByType" TYPE="forward"
+   PATH="/p/contests/uploadByType.do" TARGET="action2"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action9"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="contestForm" ID="#p#contests#uploadSuccess" TYPE="action"
+  PATH="/p/contests/uploadSuccess" SHAPE="512,193,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="contests.file.upload.success" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2"
+  TITLE="contestForm" ID="#p#contests#uploadByType" TYPE="action"
+  PATH="/p/contests/uploadByType" SHAPE="272,33,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="mainView" ID="mainView" TYPE="forward" PATH="contests.main" TARGET="page1"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="uploadByType" ID="uploadByType" TYPE="forward"
+   PATH="contests.file.upload.by.type" TARGET="page2"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/p/contests/uploadSuccess.do?action=showSuccess" TARGET="action1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action3"
+  TITLE="contestForm" ID="#p#contests#upload" TYPE="action"
+  PATH="/p/contests/upload" SHAPE="32,193,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="mainView" ID="mainView" TYPE="forward" PATH="contests.main" TARGET="page1"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="upload" ID="upload" TYPE="forward" PATH="contests.file.upload" TARGET="page3"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/p/contests/uploadSuccess.do?action=showSuccess" TARGET="action1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4"
+  TITLE="contestForm" ID="#p#c#castAVote*" TYPE="action"
+  PATH="/p/c/castAVote*" SHAPE="32,593,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action7"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="/p/displayPollResults.do?action=showResults" TARGET="action8"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  TITLE="contestForm" ID="#contests#main" TYPE="action"
+  PATH="/contests/main" SHAPE="272,385,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="mainView" ID="mainView" TYPE="forward" PATH="contests.main" TARGET="page1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  TITLE="contests.file.upload.success" TYPE="page" SUBTYPE="tile"
+  PATH="contests.file.upload.success" SHAPE="720,210,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  TITLE="contests.main" TYPE="page" SUBTYPE="tile" PATH="contests.main" SHAPE="512,18,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  TITLE="contests.file.upload.by.type" TYPE="page" SUBTYPE="tile"
+  PATH="contests.file.upload.by.type" SHAPE="512,370,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="contests.file.upload" TYPE="page" SUBTYPE="tile"
+  PATH="contests.file.upload" SHAPE="272,210,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action7"
+  ID="#displayPoll" TYPE="action" SUBTYPE="unknown" PATH="/displayPoll" SHAPE="256,609,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action8"
+  ID="#p#displayPollResults" TYPE="action" SUBTYPE="unknown"
+  PATH="/p/displayPollResults" SHAPE="256,753,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action9" ID="#home"
+  TYPE="action" SUBTYPE="unknown" PATH="/home" SHAPE="240,129,0,0"/>
+</PROCESS>

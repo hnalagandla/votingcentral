@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0" TITLE="error.403"
+  TYPE="page" SUBTYPE="tile" PATH="error.403" SHAPE="240,34,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1" TITLE="error.500"
+  TYPE="page" SUBTYPE="tile" PATH="error.500" SHAPE="240,146,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2" TITLE="error.404"
+  TYPE="page" SUBTYPE="tile" PATH="error.404" SHAPE="240,258,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action3"
+  TITLE="helpForm" ID="#aboutUs" TYPE="action" SUBTYPE="parameter"
+  PATH="/aboutUs" SHAPE="32,353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action3"
+   TITLE="parameter" TYPE="forward" PATH="about.us" TARGET="page3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3" TITLE="about.us"
+  TYPE="page" SUBTYPE="tile" PATH="about.us" SHAPE="240,465,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="helpForm" ID="#contactUs" TYPE="action" SUBTYPE="parameter"
+  PATH="/contactUs" SHAPE="32,577,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action0"
+   TITLE="parameter" TYPE="forward" PATH="contact.us" TARGET="page4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  TITLE="contact.us" TYPE="page" SUBTYPE="tile" PATH="contact.us" SHAPE="240,594,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4"
+  TITLE="helpForm" ID="#faq" TYPE="action" SUBTYPE="parameter"
+  PATH="/faq" SHAPE="32,689,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action4"
+   TITLE="parameter" TYPE="forward" PATH="faq" TARGET="page5"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5" TITLE="faq"
+  TYPE="page" SUBTYPE="tile" PATH="faq" SHAPE="240,706,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  TITLE="helpForm" ID="#privacyPolicy" TYPE="action" SUBTYPE="parameter"
+  PATH="/privacyPolicy" SHAPE="32,801,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action5"
+   TITLE="parameter" TYPE="forward" PATH="privacy.policy" TARGET="page6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  TITLE="privacy.policy" TYPE="page" SUBTYPE="tile"
+  PATH="privacy.policy" SHAPE="240,818,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action6"
+  TITLE="helpForm" ID="#tAndC" TYPE="action" SUBTYPE="parameter"
+  PATH="/tAndC" SHAPE="32,913,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action6"
+   TITLE="parameter" TYPE="forward" PATH="terms.and.conditions" TARGET="page7"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  TITLE="terms.and.conditions" TYPE="page" SUBTYPE="tile"
+  PATH="terms.and.conditions" SHAPE="240,930,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="helpForm" ID="#prizesFaq" TYPE="action" SUBTYPE="parameter"
+  PATH="/prizesFaq" SHAPE="32,1025,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action1"
+   TITLE="parameter" TYPE="forward" PATH="prizes.faq" TARGET="page9"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page9"
+  TITLE="prizes.faq" TYPE="page" SUBTYPE="tile" PATH="prizes.faq" SHAPE="240,1137,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2"
+  TITLE="helpForm" ID="#prizesTAndC" TYPE="action" SUBTYPE="parameter"
+  PATH="/prizesTAndC" SHAPE="32,1249,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action2"
+   TITLE="parameter" TYPE="forward" PATH="prizes.tAndC" TARGET="page8"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8"
+  TITLE="prizes.tAndC" TYPE="page" SUBTYPE="tile" PATH="prizes.tAndC" SHAPE="240,1266,0,0"/>
+</PROCESS>

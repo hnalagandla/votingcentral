@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 U (http://www.xmlspy.com) by Saritha Kiran Nalagandla (AMERICA ONLINE) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Saritha Kiran Nalagandla (AMERICA ONLINE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PollData">
+		<xs:annotation>
+			<xs:documentation>This is the location where various info reg a poll are stored.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PollId">
+					<xs:annotation>
+						<xs:documentation>Id that uniquely identifies this poll.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Questionnaire">
+					<xs:annotation>
+						<xs:documentation>Element that encapsulates all the questions for this poll.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="QuestionData" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A poll can have mutiple questions.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Question">
+											<xs:annotation>
+												<xs:documentation>One of the questions in the poll.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="QuestionId">
+											<xs:annotation>
+												<xs:documentation>Id that uniquely identifies this question.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="QuestionTotalVotes">
+											<xs:annotation>
+												<xs:documentation>Total Number of votes cast for this question.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="QuestionType">
+											<xs:annotation>
+												<xs:documentation>This is to mention, if this is a  radio button question, check box question, or text field question.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="QuestionImageId" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Id of the corresponding Question Image</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="AnswerChoice" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Various answer choices offered for this question</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Answer">
+														<xs:annotation>
+															<xs:documentation>One of the choices a user can pick.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="AnswerId">
+														<xs:annotation>
+															<xs:documentation>Id that uniquely identifies this answer.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="AnswerTotalVotes">
+														<xs:annotation>
+															<xs:documentation>Total Votes recieved for this answer.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="AnswerImageId" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Id of the corresponding Answer Image</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="helpForm"
+			type="org.apache.struts.action.DynaActionForm">
+		</form-bean>
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action name="helpForm" path="/aboutUs" scope="request"
+			parameter="about.us" type="org.apache.struts.actions.ForwardAction"
+			validate="false" />
+		<action name="helpForm" path="/contactUs" scope="request"
+			parameter="contact.us" type="org.apache.struts.actions.ForwardAction"
+			validate="false" />
+		<action name="helpForm" path="/faq" scope="request"
+			parameter="faq" type="org.apache.struts.actions.ForwardAction"
+			validate="false" />
+		<action name="helpForm" path="/privacyPolicy" scope="request"
+			parameter="privacy.policy"
+			type="org.apache.struts.actions.ForwardAction" validate="false" />
+		<action name="helpForm" path="/tAndC" scope="request"
+			parameter="terms.and.conditions"
+			type="org.apache.struts.actions.ForwardAction" validate="false" />
+		<action name="helpForm" path="/prizesFaq" scope="request"
+			parameter="prizes.faq"
+			type="org.apache.struts.actions.ForwardAction" validate="false" />
+		<action name="helpForm" path="/prizesTAndC" scope="request"
+			parameter="prizes.tAndC"
+			type="org.apache.struts.actions.ForwardAction" validate="false" />			
+	</action-mappings>
+</struts-config>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="forward0"
+  TITLE="sessionEnded" ID="sessionEnded" TYPE="forward" PATH="/home.do"
+  SHAPE="944,17,0,0" LINK_SHAPE="-1,40" TARGET="action11"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page33"
+  TITLE="contests.main" TYPE="page" SUBTYPE="tile" PATH="contests.main" SHAPE="240,4977,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page34" TITLE="taf"
+  TYPE="page" SUBTYPE="tile" PATH="taf" SHAPE="240,3617,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page35"
+  TITLE="subject.discuss" TYPE="page" SUBTYPE="tile"
+  PATH="subject.discuss" SHAPE="480,1729,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page37"
+  TITLE="edit.message" TYPE="page" SUBTYPE="tile" PATH="edit.message" SHAPE="240,2513,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page38"
+  TITLE="contests.file.upload.success" TYPE="page" SUBTYPE="tile"
+  PATH="contests.file.upload.success" SHAPE="240,4305,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page24"
+  TITLE="create.poll" TYPE="page" SUBTYPE="tile" PATH="create.poll" SHAPE="1264,3281,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page36"
+  TITLE="preview.poll" TYPE="page" SUBTYPE="tile" PATH="preview.poll" SHAPE="1216,3553,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page39"
+  TITLE="submit.poll" TYPE="page" SUBTYPE="tile" PATH="submit.poll" SHAPE="1424,3409,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page40"
+  TITLE="vc.home.page" TYPE="page" SUBTYPE="tile" PATH="vc.home.page" SHAPE="1216,897,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page41"
+  TITLE="display.poll" TYPE="page" SUBTYPE="tile" PATH="display.poll" SHAPE="512,1265,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page42"
+  TITLE="message.board" TYPE="page" SUBTYPE="tile" PATH="message.board" SHAPE="464,2417,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page43"
+  TITLE="search.results" TYPE="page" SUBTYPE="tile"
+  PATH="search.results" SHAPE="448,3617,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page44"
+  TITLE="taf.thanks" TYPE="page" SUBTYPE="tile" PATH="taf.thanks" SHAPE="240,4529,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page45"
+  TITLE="new.user.reg" TYPE="page" SUBTYPE="tile" PATH="new.user.reg" SHAPE="512,625,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page46"
+  TITLE="polls.main" TYPE="page" SUBTYPE="tile" PATH="polls.main" SHAPE="512,3409,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page16"
+  TITLE="admin.contests.approve.reject" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.approve.reject" SHAPE="928,3633,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page23"
+  TITLE="admin.contests.edit" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.edit" SHAPE="928,3745,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page11"
+  TITLE="admin.main" TYPE="page" SUBTYPE="tile" PATH="admin.main" SHAPE="1296,3729,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page15"
+  TITLE="admin.contests.main" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.main" SHAPE="512,3745,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page25"
+  TITLE="myvc.main" TYPE="page" SUBTYPE="tile" PATH="myvc.main" SHAPE="240,5921,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page26"
+  TITLE="myvc.polls" TYPE="page" SUBTYPE="tile" PATH="myvc.polls" SHAPE="240,6033,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page27"
+  TITLE="myvc.contests" TYPE="page" SUBTYPE="tile" PATH="myvc.contests" SHAPE="448,5921,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page28"
+  TITLE="myvc.votes" TYPE="page" SUBTYPE="tile" PATH="myvc.votes" SHAPE="240,6145,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page29"
+  TITLE="myvc.msgboards" TYPE="page" SUBTYPE="tile"
+  PATH="myvc.msgboards" SHAPE="448,6033,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page48"
+  TITLE="passwdsent" TYPE="page" SUBTYPE="tile" PATH="passwdsent" SHAPE="240,4898,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page50"
+  TITLE="unfinished.poll" TYPE="page" SUBTYPE="tile"
+  PATH="unfinished.poll" SHAPE="1072,5473,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page49"
+  TITLE="create.poll.poll.basics" TYPE="page" SUBTYPE="tile"
+  PATH="create.poll.poll.basics" SHAPE="1264,4209,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page51"
+  TITLE="create.poll.add.questions" TYPE="page" SUBTYPE="tile"
+  PATH="create.poll.add.questions" SHAPE="1472,4097,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page53"
+  TITLE="create.poll.select.times" TYPE="page" SUBTYPE="tile"
+  PATH="create.poll.select.times" SHAPE="1808,4785,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page54"
+  TITLE="contests.file.upload" TYPE="page" SUBTYPE="tile"
+  PATH="contests.file.upload" SHAPE="240,5089,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page30"
+  TITLE="new.user.conf.code" TYPE="page" SUBTYPE="tile"
+  PATH="new.user.conf.code" SHAPE="1248,561,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page55"
+  TITLE="new.user.confirmed" TYPE="page" SUBTYPE="tile"
+  PATH="new.user.confirmed" SHAPE="1248,673,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page56"
+  TITLE="display.poll.results" TYPE="page" SUBTYPE="tile"
+  PATH="display.poll.results" SHAPE="448,1041,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page58"
+  TITLE="new.subject" TYPE="page" SUBTYPE="tile" PATH="new.subject" SHAPE="240,1825,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  TITLE="search.index" TYPE="page" SUBTYPE="tile" PATH="search.index" SHAPE="240,3729,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page59"
+  TITLE="myvc.account.info" TYPE="page" SUBTYPE="tile"
+  PATH="myvc.account.info" SHAPE="512,737,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page61" TITLE="vc.login"
+  TYPE="page" SUBTYPE="tile" PATH="vc.login" SHAPE="240,6241,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  TITLE="myvc.poll.comments" TYPE="page" SUBTYPE="tile"
+  PATH="myvc.poll.comments" SHAPE="656,5921,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="forward1"
+  TITLE="confirmUser" ID="confirmUser" TYPE="forward"
+  PATH="/regNewUser/enterCode.do?action=showEnterCode"
+  SHAPE="656,817,0,0" TARGET="action3"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page10"
+  TITLE="polls.by.cat" TYPE="page" SUBTYPE="tile" PATH="polls.by.cat" SHAPE="528,929,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action3"
+  ID="#regNewUser#enterCode" TYPE="action" SUBTYPE="unknown"
+  PATH="/regNewUser/enterCode" SHAPE="864,817,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page31"
+  TITLE="rec.ended.polls" TYPE="page" SUBTYPE="tile"
+  PATH="rec.ended.polls" SHAPE="240,1522,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page47"
+  TITLE="results.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/search/results.jsp" SHAPE="784,17,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page57"
+  TITLE="showPoll.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/polls/showPoll.jsp" SHAPE="784,497,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page18"
+  TITLE="showBoard.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgBoard/showBoard.jsp" SHAPE="240,1265,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page62"
+  TITLE="showMessage.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgBoard/showMessage.jsp" SHAPE="448,1153,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page64" TITLE="taf.jsp"
+  TYPE="page" SUBTYPE="jsp" PATH="/jsp/friend/taf.jsp" SHAPE="784,1041,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/p/doTaf.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/p/doTaf.do" TARGET="action14"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action6" TITLE="tafForm"
+  ID="#p#taf" TYPE="action" PATH="/p/taf" SHAPE="32,4465,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showTaf" ID="showTaf" TYPE="forward" PATH="taf" TARGET="page34"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action14"
+  TITLE="tafForm" ID="#p#doTaf" TYPE="action" PATH="/p/doTaf" SHAPE="32,5489,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/p/tafThanks.do?action=showThanks" TARGET="action16"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showTaf" ID="showTaf" TYPE="forward" PATH="taf" TARGET="page34"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action23"
+  TITLE="advSearchFormBean" ID="#p#advSearch" TYPE="action"
+  PATH="/p/advSearch" SHAPE="448,2353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="searchDone" ID="searchDone" TYPE="forward"
+   PATH="/jsp/search/results.jsp" TARGET="page47"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action24"
+  TITLE="advSearchFormBean" ID="#p#searchResults" TYPE="action"
+  PATH="/p/searchResults" SHAPE="448,2577,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/jsp/polls/showPoll.jsp" TARGET="page57"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action27"
+  TITLE="processPollFormBean" ID="#p#createPoll" TYPE="action"
+  PATH="/p/createPoll" SHAPE="304,1121,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="unFinished" ID="unFinished" TYPE="forward"
+   PATH="unfinished.poll" TARGET="page50"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="createNewPoll" ID="createNewPoll" TYPE="forward"
+   PATH="/p/createPoll/pollBasics.do?action=pollBasics" TARGET="action29"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action29"
+  TITLE="pollBasicsFormBean" ID="#p#createPoll#pollBasics" TYPE="action"
+  PATH="/p/createPoll/pollBasics" SHAPE="560,897,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="pollBasics" ID="pollBasics" TYPE="forward"
+   PATH="create.poll.poll.basics" TARGET="page49"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="previewPoll" ID="previewPoll" TYPE="forward"
+   PATH="/p/previewPoll.do" TARGET="action32"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="createPollHome" ID="createPollHome" TYPE="forward"
+   PATH="/p/createPoll.do?action=createPoll" TARGET="action27"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="addQuestions" ID="addQuestions" TYPE="forward"
+   PATH="/p/createPoll/addQuestions.do?action=addQuestions" TARGET="action33"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward4"
+   TITLE="createNewPoll" ID="createNewPoll" TYPE="forward"
+   PATH="/p/createPoll.do?action=createNewPoll" TARGET="action27"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action32"
+  TITLE="showPollFormBean" ID="#p#previewPoll" TYPE="action"
+  PATH="/p/previewPoll" SHAPE="816,1121,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="previewPoll" ID="previewPoll" TYPE="forward"
+   PATH="preview.poll" TARGET="page36"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="submitPoll" ID="submitPoll" TYPE="forward"
+   PATH="/p/submitPoll.do?action=submitPoll" TARGET="action44"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="editPoll" ID="editPoll" TYPE="forward"
+   PATH="/p/createPoll/pollBasics.do?action=pollBasics" TARGET="action29"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action33"
+  TITLE="pollQuestionsFormBean" ID="#p#createPoll#addQuestions"
+  TYPE="action" PATH="/p/createPoll/addQuestions" SHAPE="816,705,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="previewPoll" ID="previewPoll" TYPE="forward"
+   PATH="/p/previewPoll.do" TARGET="action32"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="pollTimes" ID="pollTimes" TYPE="forward"
+   PATH="/p/createPoll/pollTimes.do?action=pollTimes" TARGET="action43"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="createPollHome" ID="createPollHome" TYPE="forward"
+   PATH="p/createPoll.do?action=createPoll" TARGET="page0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="addQuestions" ID="addQuestions" TYPE="forward"
+   PATH="create.poll.add.questions" TARGET="page51"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action43"
+  TITLE="pollTimingsFormBean" ID="#p#createPoll#pollTimes" TYPE="action"
+  PATH="/p/createPoll/pollTimes" SHAPE="1088,689,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="previewPoll" ID="previewPoll" TYPE="forward"
+   PATH="/p/previewPoll.do?action=previewPoll" TARGET="action32"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="pollTimes" ID="pollTimes" TYPE="forward"
+   PATH="create.poll.select.times" TARGET="page53"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="createPollHome" ID="createPollHome" TYPE="forward"
+   PATH="/p/createPoll.do?action=createPoll" TARGET="action27"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action44"
+  TITLE="submitPollFormBean" ID="#p#submitPoll" TYPE="action"
+  PATH="/p/submitPoll" SHAPE="1088,1105,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="submitPoll" ID="submitPoll" TYPE="forward" PATH="submit.poll" TARGET="page39"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="createMorePolls" ID="createMorePolls" TYPE="forward"
+   PATH="/p/createPoll.do?action=createPoll" TARGET="action27"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="pollsMain" ID="pollsMain" TYPE="forward" PATH="polls.main" TARGET="page46"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action49"
+  TITLE="showResultsFormBean" ID="#p#displayPollResults" TYPE="action"
+  PATH="/p/displayPollResults" SHAPE="1088,1313,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="postToMsgBoard" ID="postToMsgBoard" TYPE="forward"
+   PATH="/jsp/msgBoard/showBoard.jsp" TARGET="page18"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="nextPoll" ID="nextPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="showMessage" ID="showMessage" TYPE="forward"
+   PATH="/jsp/msgBoard/showMessage.jsp" TARGET="page62"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="display.poll.results" TARGET="page56"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward4"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward5"
+   TITLE="tellAFriend" ID="tellAFriend" TYPE="forward"
+   PATH="/jsp/friend/taf.jsp" TARGET="page64"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward6"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward7"
+   TITLE="createAPoll" ID="createAPoll" TYPE="forward"
+   PATH="/p/createPoll.do?errCode=12000" TARGET="action27"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action55"
+  TITLE="myVCForm" ID="#p#myVC" TYPE="action" PATH="/p/myVC" SHAPE="1088,1857,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="allvotes" ID="allvotes" TYPE="forward" PATH="myvc.votes" TARGET="page28"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="main" ID="main" TYPE="forward" PATH="myvc.main" TARGET="page25"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="allpollcomments" ID="allpollcomments" TYPE="forward"
+   PATH="myvc.poll.comments" TARGET="page7"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="allcontests" ID="allcontests" TYPE="forward"
+   PATH="myvc.contests" TARGET="page27"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward4"
+   TITLE="allpolls" ID="allpolls" TYPE="forward" PATH="myvc.polls" TARGET="page26"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward5"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action56"
+  TITLE="myVCForm" ID="#p#myVC#allPolls" TYPE="action"
+  PATH="/p/myVC/allPolls" SHAPE="32,6961,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="main" ID="main" TYPE="forward" PATH="myvc.main" TARGET="page25"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="allpolls" ID="allpolls" TYPE="forward" PATH="myvc.polls" TARGET="page26"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action57"
+  TITLE="myVCForm" ID="#p#myVC#allVotes" TYPE="action"
+  PATH="/p/myVC/allVotes" SHAPE="32,7313,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="allvotes" ID="allvotes" TYPE="forward" PATH="myvc.votes" TARGET="page28"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="main" ID="main" TYPE="forward" PATH="myvc.main" TARGET="page25"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action58"
+  TITLE="myVCForm" ID="#p#myVC#allContests" TYPE="action"
+  PATH="/p/myVC/allContests" SHAPE="32,7137,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="main" ID="main" TYPE="forward" PATH="myvc.main" TARGET="page25"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="allcontests" ID="allcontests" TYPE="forward"
+   PATH="myvc.contests" TARGET="page27"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action59"
+  TITLE="myVCForm" ID="#p#myVC#allMbPolls" TYPE="action"
+  PATH="/p/myVC/allMbPolls" SHAPE="32,6785,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="main" ID="main" TYPE="forward" PATH="myvc.main" TARGET="page25"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="allmsg" ID="allmsg" TYPE="forward" PATH="myvc.msgboards" TARGET="page29"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action60"
+  TITLE="regUserFormBean" ID="#p#myVCAccount" TYPE="action"
+  PATH="/p/myVCAccount" SHAPE="816,1873,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="done" ID="done" TYPE="forward"
+   PATH="/p/myVC.do?action=mainView" TARGET="action55"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="myaccount" ID="myaccount" TYPE="forward"
+   PATH="myvc.account.info" TARGET="page59"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4"
+  TITLE="pollsByCatFormBean" ID="#pollsByCat" TYPE="action"
+  PATH="/pollsByCat" SHAPE="240,1025,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="pollsByCat" ID="pollsByCat" TYPE="forward" PATH="polls.by.cat" TARGET="page10"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action7"
+  TITLE="recEndedPollsFormBean" ID="#recEndedPolls" TYPE="action"
+  PATH="/recEndedPolls" SHAPE="32,1985,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="recEndedPolls" ID="recEndedPolls" TYPE="forward"
+   PATH="rec.ended.polls" TARGET="page31"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="showPollFormBean" ID="#displayPoll" TYPE="action"
+  PATH="/displayPoll" SHAPE="1072,1601,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="postToMsgBoard" ID="postToMsgBoard" TYPE="forward"
+   PATH="/jsp/msgBoard/showBoard.jsp" TARGET="page18"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showMessage" ID="showMessage" TYPE="forward"
+   PATH="/jsp/msgBoard/showMessage.jsp" TARGET="page62"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="displayPoll" ID="displayPoll" TYPE="forward"
+   PATH="display.poll" TARGET="page41"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="showPoll" ID="showPoll" TYPE="forward" PATH="display.poll" TARGET="page41"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward4"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="/p/displayPollResults.do?action=showResults" TARGET="action49"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward5"
+   TITLE="tellAFriend" ID="tellAFriend" TYPE="forward"
+   PATH="/jsp/friend/taf.jsp" TARGET="page64"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward6"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward7"
+   TITLE="nextPoll" ID="nextPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action9"
+  TITLE="showPollFormBean" ID="#p#castAVote" TYPE="action"
+  PATH="/p/castAVote" SHAPE="304,1889,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="/p/displayPollResults.do?action=showResults" TARGET="action49"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action10"
+  ID="#ShowImage" TYPE="action" PATH="/ShowImage" SHAPE="32,3537,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action12"
+  TITLE="showPollFormBean" ID="#p#poll#addComments" TYPE="action"
+  PATH="/p/poll/addComments" SHAPE="1072,2097,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action13"
+  TITLE="showResultsFormBean" ID="#p#results#addComments" TYPE="action"
+  PATH="/p/results/addComments" SHAPE="1072,1601,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="/p/displayPollResults.do?action=showResults" TARGET="action49"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  TITLE="createPoll.do" TYPE="page" SUBTYPE="tile"
+  PATH="p/createPoll.do" SHAPE="1296,801,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action8"
+  TITLE="advSearchFormBean" ID="#search" TYPE="action" PATH="/search" SHAPE="240,5761,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="search" ID="search" TYPE="forward" PATH="search.index" TARGET="page2"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="results" ID="results" TYPE="forward" PATH="search.results" TARGET="page43"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action16"
+  TITLE="tafForm" ID="#p#tafThanks" TYPE="action" PATH="/p/tafThanks" SHAPE="240,5489,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showTafThanks" ID="showTafThanks" TYPE="forward"
+   PATH="taf.thanks" TARGET="page44"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action17"
+  TITLE="siteMapForm" ID="#sitemap" TYPE="action" PATH="/sitemap" SHAPE="32,3633,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="sitemap" ID="sitemap" TYPE="forward" PATH="site.map" TARGET="page1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1" TITLE="site.map"
+  TYPE="page" SUBTYPE="tile" PATH="site.map" SHAPE="240,3650,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action11"
+  TITLE="homeFormBean" ID="#home" TYPE="action" PATH="/home" SHAPE="1152,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="home" ID="home" TYPE="forward" PATH="vc.home.page" TARGET="page40"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2"
+  TITLE="mostVotedPollsFormBean" ID="#mostVotedPolls" TYPE="action"
+  PATH="/mostVotedPolls" SHAPE="32,1425,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="mostVotedPolls" ID="mostVotedPolls" TYPE="forward"
+   PATH="most.voted.polls" TARGET="page3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="most.voted.polls" TYPE="page" SUBTYPE="tile"
+  PATH="most.voted.polls" SHAPE="240,1649,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  TITLE="homeFormBean" ID="#p#h#castAVote*" TYPE="action"
+  PATH="/p/h/castAVote*" SHAPE="1040,2129,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showResults" ID="showResults" TYPE="forward"
+   PATH="/p/displayPollResults.do?action=showResults" TARGET="action49"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="mostEmailedPollsFormBean" ID="#mostEmailedPolls" TYPE="action"
+  PATH="/mostEmailedPolls" SHAPE="32,2497,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="mostEmailedPolls" ID="mostEmailedPolls" TYPE="forward"
+   PATH="most.emailed.polls" TARGET="page4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  TITLE="most.emailed.polls" TYPE="page" SUBTYPE="tile"
+  PATH="most.emailed.polls" SHAPE="240,2514,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action15"
+  TITLE="recStartedPollsFormBean" ID="#recStartedPolls" TYPE="action"
+  PATH="/recStartedPolls" SHAPE="32,2049,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="recStartedPolls" ID="recStartedPolls" TYPE="forward"
+   PATH="rec.started.polls" TARGET="page5"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  TITLE="rec.started.polls" TYPE="page" SUBTYPE="tile"
+  PATH="rec.started.polls" SHAPE="240,2161,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action18"
+  TITLE="pollsCreatedForm" ID="#allPollsCreated" TYPE="action"
+  PATH="/allPollsCreated" SHAPE="32,7009,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="allPollsCreated" ID="allPollsCreated" TYPE="forward"
+   PATH="all.polls.created" TARGET="page6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  TITLE="all.polls.created" TYPE="page" SUBTYPE="tile"
+  PATH="all.polls.created" SHAPE="240,7009,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action19"
+  TITLE="showPollFormBean" ID="#deletePoll" TYPE="action"
+  PATH="/deletePoll" SHAPE="304,1953,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="createAPoll" ID="createAPoll" TYPE="forward"
+   PATH="/p/createPoll.do" TARGET="action27"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action20"
+  TITLE="showResultsFormBean" ID="#p#downloadPollResults" TYPE="action"
+  PATH="/p/downloadPollResults" SHAPE="1056,2161,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action25"
+  TITLE="showPollFormBean" ID="#p#editPoll" TYPE="action"
+  PATH="/p/editPoll" SHAPE="304,1025,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="editPoll" ID="editPoll" TYPE="forward"
+   PATH="/p/createPoll/pollBasics.do?action=pollBasics" TARGET="action29"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action26"
+  TITLE="showPollFormBean" ID="#p#extendPoll" TYPE="action"
+  PATH="/p/extendPoll" SHAPE="1056,2161,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/displayPoll.do?action=showPoll" TARGET="action0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action21"
+  TITLE="siteMapForm" ID="#rss" TYPE="action" PATH="/rss" SHAPE="32,4737,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8" TITLE="left.nav"
+  TYPE="page" SUBTYPE="tile" PATH="left.nav" SHAPE="240,8289,0,0"/>
+</PROCESS>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="contestForm"
+			type="com.votingcentral.forms.contests.ContestForm" />
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action path="/contests/main"
+			type="com.votingcentral.actions.contests.ContestsAction"
+			name="contestForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="mainView" path="contests.main"
+				redirect="false" />
+		</action>	
+		<action name="contestForm"
+			path="/p/c/castAVote*" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.CastAVoteAction">
+			<forward name="showPoll" path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="showResults" path="/p/displayPollResults.do?action=showResults" redirect="true" />			
+		</action>					
+		<action path="/p/contests/upload"
+			type="com.votingcentral.actions.contests.ContestsUploadAction"
+			name="contestForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="mainView" path="contests.main"
+				redirect="false" />
+			<forward name="upload" path="contests.file.upload"
+				redirect="false" />
+			<forward name="success"
+				path="/p/contests/uploadSuccess.do?action=showSuccess"
+				redirect="true" />
+		</action>
+		<action path="/p/contests/uploadByType"
+			type="com.votingcentral.actions.contests.ContestsUploadAction"
+			name="contestForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="mainView" path="contests.main"
+				redirect="false" />
+			<forward name="uploadByType" path="contests.file.upload.by.type"
+				redirect="false" />
+			<forward name="success"
+				path="/p/contests/uploadSuccess.do?action=showSuccess"
+				redirect="true" />
+		</action>		
+		<action path="/p/contests/uploadSuccess"
+			type="com.votingcentral.actions.contests.ContestsUploadAction"
+			name="contestForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="success" path="contests.file.upload.success"
+				redirect="true" />
+		</action>
+		<action path="/p/contestsDone"
+			type="com.votingcentral.actions.contests.ContestsAction"
+			name="contestForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="uploadByType" path="/p/contests/uploadByType.do"
+				redirect="false" />
+		</action>
+	</action-mappings>
+</struts-config>

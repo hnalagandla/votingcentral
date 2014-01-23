@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action9"
+  TITLE="errorForm" ID="#404" TYPE="action" PATH="/404" SHAPE="240,33,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="default" ID="default" TYPE="forward" PATH="error.404" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="errorForm" ID="#403" TYPE="action" PATH="/403" SHAPE="32,241,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="default" ID="default" TYPE="forward" PATH="error.403" TARGET="page1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="errorForm" ID="#500" TYPE="action" PATH="/500" SHAPE="32,353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="default" ID="default" TYPE="forward" PATH="error.500" TARGET="page2"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0" TITLE="error.404"
+  TYPE="page" SUBTYPE="tile" PATH="error.404" SHAPE="448,33,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1" TITLE="error.403"
+  TYPE="page" SUBTYPE="tile" PATH="error.403" SHAPE="240,241,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2" TITLE="error.500"
+  TYPE="page" SUBTYPE="tile" PATH="error.500" SHAPE="240,465,0,0"/>
+</PROCESS>

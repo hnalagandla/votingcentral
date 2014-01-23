@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0" TITLE="bar.graph"
+  TYPE="page" SUBTYPE="tile" PATH="bar.graph" SHAPE="240,1153,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2" TITLE="pie.chart"
+  TYPE="page" SUBTYPE="tile" PATH="pie.chart" SHAPE="240,1265,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="gender.graph" TYPE="page" SUBTYPE="tile" PATH="gender.graph" SHAPE="448,1153,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  TITLE="location.graph" TYPE="page" SUBTYPE="tile"
+  PATH="location.graph" SHAPE="240,1377,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  TITLE="dist.chart" TYPE="page" SUBTYPE="tile" PATH="dist.chart" SHAPE="448,1265,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="chartForm" ID="#p#showChart" TYPE="action" PATH="/p/showChart" SHAPE="32,1137,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="gender" ID="gender" TYPE="forward" PATH="gender.graph" TARGET="page3"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="barMain" ID="barMain" TYPE="forward" PATH="bar.graph" TARGET="page0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="location" ID="location" TYPE="forward" PATH="location.graph" TARGET="page4"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="pieMain" ID="pieMain" TYPE="forward" PATH="pie.chart" TARGET="page2"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward4"
+   TITLE="dist" ID="dist" TYPE="forward" PATH="dist.chart" TARGET="page1"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward5"
+   TITLE="showPoll" ID="showPoll" TYPE="forward"
+   PATH="/p/displayPoll.do?action=showPoll" TARGET="action1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  ID="#p#displayPoll" TYPE="action" SUBTYPE="unknown"
+  PATH="/p/displayPoll" SHAPE="656,1137,0,0"/>
+</PROCESS>

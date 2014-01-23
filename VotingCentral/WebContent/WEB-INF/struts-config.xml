@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- Form Beans 
+		Global Exceptions -->
+	<form-beans>
+		<form-bean name="baseFormBean"
+			type="com.votingcentral.forms.VCBaseFormBean" />
+		<form-bean name="homeFormBean"
+			type="com.votingcentral.forms.HomePageFormBean" />
+		<form-bean name="processPollFormBean"
+			type="com.votingcentral.forms.polls.ProcessPollFormBean" />
+		<form-bean name="showPollFormBean"
+			type="com.votingcentral.forms.polls.ShowPollFormBean" />
+		<form-bean name="showResultsFormBean"
+			type="com.votingcentral.forms.polls.ShowPollResultsFormBean" />
+		<form-bean name="pollBasicsFormBean"
+			type="com.votingcentral.forms.polls.PollBasicsFormBean" />
+		<form-bean name="pollQuestionsFormBean"
+			type="com.votingcentral.forms.polls.PollQuestionsFormBean" />
+		<form-bean name="pollTimingsFormBean"
+			type="com.votingcentral.forms.polls.PollTimingsFormBean" />
+		<form-bean name="submitPollFormBean"
+			type="com.votingcentral.forms.polls.SubmitPollFormBean" />
+		<form-bean name="advSearchFormBean"
+			type="com.votingcentral.forms.search.AdvanceSearchFormBean" />
+		<form-bean name="searchResultsFormBean"
+			type="com.votingcentral.forms.search.SearchResultsFormBean" />
+		<form-bean name="pollsByCatFormBean"
+			type="com.votingcentral.forms.polls.PollsByCatFormBean" />
+		<form-bean name="mostVotedPollsFormBean"
+			type="com.votingcentral.forms.polls.MostVotedPollsFormBean" />
+		<form-bean name="recEndedPollsFormBean"
+			type="com.votingcentral.forms.polls.RecEndedPollsFormBean" />
+		<form-bean name="mostEmailedPollsFormBean"
+			type="com.votingcentral.forms.polls.MostEmailedPollsFormBean" />
+		<form-bean name="recStartedPollsFormBean"
+			type="com.votingcentral.forms.polls.RecStartedPollsFormBean" />
+		<form-bean name="tafForm"
+			type="com.votingcentral.forms.taf.TafForm" />
+		<form-bean name="myVCForm"
+			type="com.votingcentral.forms.myvc.MyVCForm" />
+		<form-bean name="siteMapForm"
+			type="com.votingcentral.forms.sitemap.SiteMapForm" />
+		<form-bean name="pollsCreatedForm"
+			type="com.votingcentral.forms.polls.PollsCreatedByUserFormBean" />
+
+	</form-beans>
+	<global-exceptions />
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="sessionEnded" path="/home.do" redirect="true" />
+		<forward name="confirmUser"
+			path="/regNewUser/enterCode.do?action=showEnterCode"
+			redirect="false" />
+	</global-forwards>
+	<!-- Action Mappings -->
+	<action-mappings>
+		<action path="/search"
+			type="com.votingcentral.actions.search.SearchAction"
+			parameter="action" name="advSearchFormBean" scope="request">
+			<description>Search for various polls.</description>
+			<forward name="results" path="search.results"
+				redirect="false" />
+			<forward name="search" path="search.index" redirect="false" />
+		</action>
+		<action path="/p/taf"
+			type="com.votingcentral.actions.taf.TafAction" name="tafForm"
+			scope="request" parameter="action">
+			<forward name="showTaf" path="taf" redirect="false" />
+		</action>
+		<action path="/p/doTaf"
+			type="com.votingcentral.actions.taf.TafAction" name="tafForm"
+			scope="request" parameter="action">
+			<description>Tell a friend about this site</description>
+			<forward name="success"
+				path="/p/tafThanks.do?action=showThanks" redirect="true" />
+			<forward name="showTaf" path="taf" redirect="true" />
+		</action>
+		<action path="/p/tafThanks"
+			type="com.votingcentral.actions.taf.TafAction" name="tafForm"
+			scope="request" parameter="action">
+			<description>Tell a friend about this site</description>
+			<forward name="showTafThanks" path="taf.thanks"
+				redirect="false" />
+		</action>
+		<action path="/ShowImage"
+			type="com.votingcentral.actions.images.LoadImageAction">
+			<description>
+				Get picture with the given image id and poll type.
+			</description>
+		</action>
+
+		<action input="vc.home.page" name="homeFormBean" path="/home"
+			scope="request" type="com.votingcentral.actions.home.HomePageAction"
+			parameter="action">
+			<forward name="home" path="vc.home.page" redirect="false" />
+		</action>
+
+		<action input="/jsp/search/advanced.jsp"
+			name="advSearchFormBean" path="/p/advSearch" scope="request"
+			type="com.votingcentral.actions.search.SearchAction">
+			<forward name="searchDone" path="/jsp/search/results.jsp"
+				redirect="false" />
+		</action>
+		<action input="/jsp/search/results.jsp" name="advSearchFormBean"
+			path="/p/searchResults" scope="request"
+			type="com.votingcentral.actions.polls.ProcessPollAction">
+			<forward name="showPoll" path="/jsp/polls/showPoll.jsp"
+				redirect="false" />
+		</action>
+		<action input="create.poll" name="processPollFormBean"
+			path="/p/createPoll" scope="request"
+			type="com.votingcentral.actions.polls.ProcessPollAction"
+			parameter="action">
+			<forward name="createNewPoll"
+				path="/p/createPoll/pollBasics.do?action=pollBasics"
+				redirect="false" />
+			<forward name="unFinished" path="unfinished.poll"
+				redirect="false" />
+		</action>
+
+		<action input="create.poll.poll.basics"
+			name="pollBasicsFormBean" path="/p/createPoll/pollBasics"
+			scope="request"
+			type="com.votingcentral.actions.polls.PollBasicsAction"
+			parameter="action">
+			<forward name="createPollHome"
+				path="/p/createPoll.do?action=createPoll" redirect="true" />
+			<forward name="createNewPoll"
+				path="/p/createPoll.do?action=createNewPoll" redirect="false" />
+			<forward name="addQuestions"
+				path="/p/createPoll/addQuestions.do?action=addQuestions"
+				redirect="false" />
+			<forward name="pollBasics" path="create.poll.poll.basics"
+				redirect="false" />
+			<forward name="previewPoll" path="/p/previewPoll.do"
+				redirect="false" />
+		</action>
+
+		<action input="create.poll.add.questions"
+			name="pollQuestionsFormBean" path="/p/createPoll/addQuestions"
+			scope="request"
+			type="com.votingcentral.actions.polls.PollQuestionsAction"
+			parameter="action">
+			<forward name="createPollHome"
+				path="p/createPoll.do?action=createPoll" redirect="false" />
+			<forward name="addQuestions"
+				path="create.poll.add.questions" redirect="false" />
+			<forward name="pollTimes"
+				path="/p/createPoll/pollTimes.do?action=pollTimes" redirect="false" />
+			<forward name="previewPoll" path="/p/previewPoll.do"
+				redirect="false" />
+		</action>
+
+		<action input="create.poll.select.times"
+			name="pollTimingsFormBean" path="/p/createPoll/pollTimes"
+			scope="request"
+			type="com.votingcentral.actions.polls.PollTimingsAction"
+			parameter="action">
+			<forward name="createPollHome"
+				path="/p/createPoll.do?action=createPoll" redirect="false" />
+			<forward name="pollTimes" path="create.poll.select.times"
+				redirect="false" />
+			<forward name="previewPoll"
+				path="/p/previewPoll.do?action=previewPoll" redirect="false" />
+		</action>
+
+		<action input="preview.poll" name="showPollFormBean"
+			path="/p/previewPoll" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.ShowPollAction">
+			<forward name="previewPoll" path="preview.poll"
+				redirect="false" />
+			<forward name="editPoll"
+				path="/p/createPoll/pollBasics.do?action=pollBasics"
+				redirect="false" />
+			<forward name="submitPoll"
+				path="/p/submitPoll.do?action=submitPoll" redirect="true" />
+		</action>
+
+		<action input="submit.poll" name="submitPollFormBean"
+			path="/p/submitPoll" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.SubmitPollAction">
+			<forward name="submitPoll" path="submit.poll"
+				redirect="false" />
+			<forward name="pollsMain" path="polls.main"
+				redirect="false" />
+			<forward name="createMorePolls"
+				path="/p/createPoll.do?action=createPoll" redirect="false" />
+			<forward name="home" path="/home.do" redirect="true" />
+		</action>
+		<!-- 
+			If you change the display Poll URL. change the VCURLHelper.getDisplayPollURL()
+			method as well.
+		-->
+		<action input="display.poll" name="showPollFormBean"
+			path="/displayPoll" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.ShowPollAction">
+			<forward name="showPoll" path="display.poll"
+				redirect="false" />
+			<forward name="nextPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="showResults"
+				path="/p/displayPollResults.do?action=showResults" redirect="true" />
+			<forward name="tellAFriend" path="/jsp/friend/taf.jsp"
+				redirect="false" />
+			<forward name="postToMsgBoard"
+				path="/jsp/msgBoard/showBoard.jsp" redirect="false" />
+			<forward name="showMessage"
+				path="/jsp/msgBoard/showMessage.jsp" redirect="false" />
+			<forward name="displayPoll" path="display.poll"
+				redirect="false" />
+		</action>
+		<action input="delete.poll" name="showPollFormBean"
+			path="/deletePoll" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.DeletePollAction">
+			<forward name="createAPoll" path="/p/createPoll.do"
+				redirect="true" />
+		</action>
+		<action name="showPollFormBean" path="/p/editPoll"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.ShowPollAction">
+			<forward name="editPoll"
+				path="/p/createPoll/pollBasics.do?action=pollBasics"
+				redirect="true" />
+		</action>
+		<action name="showPollFormBean" path="/p/extendPoll"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.ShowPollAction">
+			<forward name="showPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+		</action>
+		<action input="display.poll" name="showPollFormBean"
+			path="/p/castAVote" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.CastAVoteAction">
+			<forward name="showPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="showResults"
+				path="/p/displayPollResults.do?action=showResults" redirect="true" />
+		</action>
+		<action input="vc.home.page" name="homeFormBean"
+			path="/p/h/castAVote*" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.CastAVoteAction">
+			<forward name="showPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="showResults"
+				path="/p/displayPollResults.do?action=showResults" redirect="true" />
+		</action>
+		<action input="display.poll" name="showPollFormBean"
+			path="/p/poll/addComments" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.PollCommentsAction">
+			<forward name="showPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+		</action>
+		<action input="display.poll.results" name="showResultsFormBean"
+			path="/p/results/addComments" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.PollCommentsAction">
+			<forward name="showResults"
+				path="/p/displayPollResults.do?action=showResults" redirect="true" />
+		</action>
+		<action input="display.poll.results" name="showResultsFormBean"
+			path="/p/displayPollResults" scope="request" parameter="action"
+			type="com.votingcentral.actions.polls.ShowPollResultsAction">
+			<forward name="showPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="tellAFriend" path="/jsp/friend/taf.jsp"
+				redirect="false" />
+			<forward name="postToMsgBoard"
+				path="/jsp/msgBoard/showBoard.jsp" redirect="false" />
+			<forward name="showMessage"
+				path="/jsp/msgBoard/showMessage.jsp" redirect="false" />
+			<!-- This error code matches PresErrorCodesEnum.CREATE_A_POLL_NO_POLLS-->
+			<forward name="createAPoll"
+				path="/p/createPoll.do?errCode=12000" redirect="true" />
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="nextPoll"
+				path="/displayPoll.do?action=showPoll" redirect="true" />
+			<forward name="showResults" path="display.poll.results"
+				redirect="false" />
+		</action>
+		<action input="display.poll.results" name="showResultsFormBean"
+			path="/p/downloadPollResults" scope="request"
+			type="com.votingcentral.actions.polls.DownloadPollResultsAction">
+		</action>
+		<action path="/p/myVC" input="myvc.main"
+			type="com.votingcentral.actions.myvc.MyVCAction" name="myVCForm"
+			scope="request" validate="false" parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="main" path="myvc.main" redirect="false" />
+			<forward name="allpolls" path="myvc.polls" redirect="false" />
+			<forward name="allcontests" path="myvc.contests"
+				redirect="false" />
+			<forward name="allvotes" path="myvc.votes" redirect="false" />
+			<forward name="allpollcomments" path="myvc.poll.comments"
+				redirect="false" />
+		</action>
+		<action path="/p/myVC/allPolls" input="myvc.polls"
+			type="com.votingcentral.actions.myvc.MyVCAction" name="myVCForm"
+			scope="request" validate="false" parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="main" path="myvc.main" redirect="false" />
+			<forward name="allpolls" path="myvc.polls" redirect="false" />
+		</action>
+		<action path="/p/myVC/allVotes" input="myvc.votes"
+			type="com.votingcentral.actions.myvc.MyVCAction" name="myVCForm"
+			scope="request" validate="false" parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="main" path="myvc.main" redirect="false" />
+			<forward name="allvotes" path="myvc.votes" redirect="false" />
+		</action>
+		<action path="/p/myVC/allContests" input="myvc.contests"
+			type="com.votingcentral.actions.myvc.MyVCAction" name="myVCForm"
+			scope="request" validate="false" parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="main" path="myvc.main" redirect="false" />
+			<forward name="allcontests" path="myvc.contests"
+				redirect="false" />
+		</action>
+		<action path="/p/myVC/allMbPolls" input="myvc.msgboards"
+			type="com.votingcentral.actions.myvc.MyVCAction" name="myVCForm"
+			scope="request" validate="false" parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="main" path="myvc.main" redirect="false" />
+			<forward name="allmsg" path="myvc.msgboards"
+				redirect="false" />
+		</action>
+		<action path="/allPollsCreated" input="all.polls.created"
+			type="com.votingcentral.actions.polls.PollsCreatedByUserAction"
+			name="pollsCreatedForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="allPollsCreated" path="all.polls.created"
+				redirect="true" />
+		</action>
+		<action path="/p/myVCAccount" input="myvc.account.info"
+			type="com.votingcentral.actions.account.MyVCAccountAction"
+			name="regUserFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="home" path="/home.do" redirect="true" />
+			<forward name="done" path="/p/myVC.do?action=mainView"
+				redirect="false" />
+			<forward name="myaccount" path="myvc.account.info"
+				redirect="false" />
+		</action>
+		<action path="/pollsByCat" input="polls.by.cat"
+			type="com.votingcentral.actions.polls.PollsByCatAction"
+			name="pollsByCatFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="pollsByCat" path="polls.by.cat"
+				redirect="false" />
+		</action>
+		<action path="/mostVotedPolls" input="most.voted.polls"
+			type="com.votingcentral.actions.polls.MostVotedPollsAction"
+			name="mostVotedPollsFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="mostVotedPolls" path="most.voted.polls"
+				redirect="false" />
+		</action>
+		<action path="/recEndedPolls" input="rec.ended.polls"
+			type="com.votingcentral.actions.polls.RecEndedPollsAction"
+			name="recEndedPollsFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="recEndedPolls" path="rec.ended.polls"
+				redirect="false" />
+		</action>
+		<action path="/mostEmailedPolls" input="most.emailed.polls"
+			type="com.votingcentral.actions.polls.MostEmailedPollsAction"
+			name="mostEmailedPollsFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="mostEmailedPolls" path="most.emailed.polls"
+				redirect="false" />
+		</action>
+		<action path="/recStartedPolls" input="rec.started.polls"
+			type="com.votingcentral.actions.polls.RecStartedPollsAction"
+			name="recStartedPollsFormBean" scope="request" validate="false"
+			parameter="action">
+			<forward name="recStartedPolls" path="rec.started.polls"
+				redirect="false" />
+		</action>
+		<action path="/sitemap" input="site.map"
+			type="com.votingcentral.actions.sitemap.SiteMapAction"
+			name="siteMapForm" scope="request" validate="false"
+			parameter="action">
+			<forward name="sitemap" path="site.map" redirect="false" />
+		</action>
+		<action path="/rss"
+			type="com.votingcentral.actions.rss.RSSFileGenaratorAction"
+			name="siteMapForm" scope="request" validate="false"
+			parameter="action">
+		</action>
+	</action-mappings>
+	<controller />
+	<!-- Message Resources -->
+	<message-resources
+		parameter="com.votingcentral.resources.ApplicationResources" />
+	<message-resources key="SQL"
+		parameter="com.votingcentral.resources.SQLResources" />
+	<message-resources key="Env"
+		parameter="com.votingcentral.resources.Env" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles/definitions.xml, /WEB-INF/tiles/help-definitions.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+		<set-property property="definitions-debug" value="2" />
+		<set-property property="definitions-parser-details" value="2" />
+	</plug-in>
+</struts-config>

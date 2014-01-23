@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the Message Board and related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="subjectBoardForm" type="com.votingcentral.forms.msgboard.SubjectBoardForm" />
+		<form-bean name="discussBoardForm" type="com.votingcentral.forms.msgboard.DiscussBoardForm" />
+		<form-bean name="subjectForm" type="com.votingcentral.forms.msgboard.SubjectForm" />
+		<form-bean name="MessageForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="messageId" type="java.lang.String" />
+			<form-property name="subjectId" type="java.lang.String" />
+			<form-property name="pollId" type="java.lang.String" />
+			<form-property name="message" type="java.lang.String" />
+		</form-bean>
+			
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>		
+		<!-- Get Subject Board - MAY NOT BE REQUIRED, REMOVE THIS MAPPING -->
+		<action path="/msgboard/showSubjectBoard"
+			type="com.votingcentral.actions.msgboard.SubjectBoardAction"
+			name="subjectBoardForm" 
+			scope="request" 
+			validate="false">
+			<forward name="showSubjectBoard" path="/jsp/protected/msgboard/subjectBoard.jsp" redirect="false" />
+		</action>
+		<!-- Preview New Subject Form-->
+		<action path="/msgboard/createSubject"
+			type="org.apache.struts.actions.ForwardAction" name="subjectForm"
+			scope="request" 
+			parameter="new.subject" 
+			validate="false" />
+		<!-- New Subject -->
+		<action path="/msgboard/newSubject"
+			type="com.votingcentral.actions.msgboard.NewSubjectAction"
+			name="subjectForm" 
+			scope="request" 
+			parameter="action" 
+			validate="false">
+			<forward name="success" path="/protected/displayPoll.do?action=showPoll" redirect="false" />
+			<forward name="preview" path="preview.subject" redirect="false" />
+		</action>
+		<action path="/msgboard/admin/archiveSubject"
+			type="com.votingcentral.actions.msgboard.ArchiveSubjectAction"
+			name="subjectForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="/protected/displayPoll.do?action=displayPollResults" redirect="false" />
+		</action>
+		<!-- Get Subject Discussion Board-->
+		<action path="/msgboard/showDiscussBoard"
+			type="com.votingcentral.actions.msgboard.DiscussBoardAction"
+			name="discussBoardForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="subject.discuss" redirect="false" />
+		</action>
+		<!-- Add Message -->
+		<action path="/msgboard/addMessage"
+			type="com.votingcentral.actions.msgboard.AddMsgAction"
+			name="discussBoardForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="/msgboard/showDiscussBoard.do" redirect="false" />
+		</action>
+		<action path="/msgboard/admin/editMessage"
+			type="com.votingcentral.actions.msgboard.EditMsgAction"
+			name="MessageForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="edit.message" redirect="false" />
+		</action>
+		<action path="/msgboard/admin/updateMessage"
+			type="com.votingcentral.actions.msgboard.UpdateMsgAction"
+			name="MessageForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="/msgboard/showDiscussBoard.do" redirect="false" />
+		</action>
+		<action path="/msgboard/admin/deleteMessage"
+			type="com.votingcentral.actions.msgboard.DeleteMsgAction"
+			name="MessageForm" 
+			scope="request" 
+			validate="false">
+			<forward name="success" path="/msgboard/showDiscussBoard.do" redirect="false" />
+		</action>
+	</action-mappings>
+</struts-config>

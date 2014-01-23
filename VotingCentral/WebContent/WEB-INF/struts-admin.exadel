@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  TITLE="userMain.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/admin/user/userMain.jsp" SHAPE="288,34,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  TITLE="msgBrdMain.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/admin/msgBoard/msgBrdMain.jsp" SHAPE="288,242,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  TITLE="admin.contests.main" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.main" SHAPE="288,354,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="polls.main" TYPE="page" SUBTYPE="tile" PATH="polls.main" SHAPE="288,466,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  TITLE="create.poll" TYPE="page" SUBTYPE="tile" PATH="create.poll" SHAPE="272,866,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  TITLE="admin.contests.approve.reject" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.approve.reject" SHAPE="256,1090,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8"
+  TITLE="admin.contests.edit" TYPE="page" SUBTYPE="tile"
+  PATH="admin.contests.edit" SHAPE="256,1378,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page9"
+  TITLE="admin.main" TYPE="page" SUBTYPE="tile" PATH="admin.main" SHAPE="256,1234,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4"
+  TITLE="adminFormBean" ID="#admin#main" TYPE="action"
+  PATH="/admin/main" SHAPE="32,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="adminUsers" ID="adminUsers" TYPE="forward"
+   PATH="/jsp/admin/user/userMain.jsp" TARGET="page0"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="adminMain" ID="adminMain" TYPE="forward" PATH="admin.main" TARGET="page9"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="adminMsgBrds" ID="adminMsgBrds" TYPE="forward"
+   PATH="/jsp/admin/msgBoard/msgBrdMain.jsp" TARGET="page1"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="adminContests" ID="adminContests" TYPE="forward"
+   PATH="admin.contests.main" TARGET="page2"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward5"
+   TITLE="editPoll" ID="editPoll" TYPE="forward"
+   PATH="/p/createPoll/pollBasics.do?action=pollBasics" TARGET="action2"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  TITLE="adminFormBean" ID="#admin#contests#main" TYPE="action"
+  PATH="/admin/contests/main" SHAPE="32,1153,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="approveRejectContests" ID="approveRejectContests"
+   TYPE="forward" PATH="admin.contests.approve.reject" TARGET="page7"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="editContests" ID="editContests" TYPE="forward"
+   PATH="admin.contests.edit" TARGET="page8"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action6"
+  TITLE="contestForm" ID="#admin#contests#approveReject" TYPE="action"
+  PATH="/admin/contests/approveReject" SHAPE="32,1409,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="done" ID="done" TYPE="forward" PATH="admin.main" TARGET="page9"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="process" ID="process" TYPE="forward"
+   PATH="admin.contests.approve.reject" TARGET="page7"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="pollsAdminForm" ID="#admin#poll" TYPE="action"
+  PATH="/admin/poll" SHAPE="240,129,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward3"
+   TITLE="editPoll" ID="editPoll" TYPE="forward" PATH="polls.main" TARGET="page3"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="previewPoll" ID="previewPoll" TYPE="forward"
+   PATH="/p/previewPoll.do" TARGET="action0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  ID="#p#previewPoll" TYPE="action" SUBTYPE="unknown"
+  PATH="/p/previewPoll" SHAPE="448,129,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2"
+  ID="#p#createPoll#pollBasics" TYPE="action" SUBTYPE="unknown"
+  PATH="/p/createPoll/pollBasics" SHAPE="448,17,0,0"/>
+</PROCESS>

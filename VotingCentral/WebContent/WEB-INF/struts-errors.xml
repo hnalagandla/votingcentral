@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="errorForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="homeUrl" type="java.lang.String" />
+			<form-property name="siteMapUrl" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action name="errorForm" path="/403" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.errors.ErrorAction">
+			<forward name="default" path="error.403" redirect="false" />
+		</action>
+		<action name="errorForm" path="/404" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.errors.ErrorAction">
+			<forward name="default" path="error.404" redirect="false" />
+		</action>
+		<action name="errorForm" path="/500" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.errors.ErrorAction">
+			<forward name="default" path="error.500" redirect="false" />
+		</action>
+	</action-mappings>
+</struts-config>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="subjectForm" ID="#createSubject" TYPE="action"
+  PATH="/createSubject" SHAPE="32,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/msgboard/showMessageBoard.do" TARGET="action5"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="messageBoardForm" ID="#showMessageBoard" TYPE="action"
+  PATH="/showMessageBoard" SHAPE="32,129,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/jsp/msgboard/messageBoard.jsp" TARGET="page3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2"
+  TITLE="discussBoardForm" ID="#addMessage" TYPE="action"
+  PATH="/addMessage" SHAPE="32,241,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/msgboard/showDiscussBoard.do" TARGET="action6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action3"
+  TITLE="subjectForm" ID="#newSubject" TYPE="action" SUBTYPE="parameter"
+  PATH="/newSubject" SHAPE="32,353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action3"
+   TITLE="parameter" TYPE="forward" PATH="/jsp/msgboard/newSubject.jsp" TARGET="page4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4"
+  TITLE="discussBoardForm" ID="#showDiscussBoard" TYPE="action"
+  PATH="/showDiscussBoard" SHAPE="32,465,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/jsp/msgboard/subjectDiscuss.jsp" TARGET="page5"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  ID="#msgboard#showMessageBoard" TYPE="action" SUBTYPE="unknown"
+  PATH="/msgboard/showMessageBoard" SHAPE="240,33,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  TITLE="MessageBoard.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/MessageBoard.jsp" SHAPE="240,146,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/showMessageBoard.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/showMessageBoard.do" TARGET="action1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action6"
+  ID="#msgboard#showDiscussBoard" TYPE="action" SUBTYPE="unknown"
+  PATH="/msgboard/showDiscussBoard" SHAPE="240,257,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  TITLE="NewSubject.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/NewSubject.jsp" SHAPE="240,370,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/newSubject.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/newSubject.do" TARGET="action3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  TITLE="SubjectDiscuss.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/SubjectDiscuss.jsp" SHAPE="240,482,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/showDiscussBoard.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/showDiscussBoard.do" TARGET="action4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="messageBoard.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/messageBoard.jsp" SHAPE="448,129,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/showMessageBoard.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/showMessageBoard.do" TARGET="action1"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  TITLE="newSubject.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/newSubject.jsp" SHAPE="448,353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/newSubject.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/newSubject.do" TARGET="action3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  TITLE="subjectDiscuss.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/msgboard/subjectDiscuss.jsp" SHAPE="240,577,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   TITLE="/showDiscussBoard.do" TYPE="link" SUBTYPE="confirmed"
+   PATH="/showDiscussBoard.do" TARGET="action4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action7"
+  TITLE="discussBoardForm" ID="#admin#deleteMessage" TYPE="action"
+  PATH="/admin/deleteMessage" SHAPE="32,577,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/msgboard/showDiscussBoard.do" TARGET="action6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action8"
+  TITLE="messageBoardForm" ID="#showMsgBoard" TYPE="action"
+  PATH="/showMsgBoard" SHAPE="256,705,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/jsp/include/msgboard/showBoard.jsp" TARGET="page6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  TITLE="showBoard.jsp" TYPE="page" SUBTYPE="jsp"
+  PATH="/jsp/include/msgboard/showBoard.jsp" SHAPE="464,705,0,0"/>
+</PROCESS>

@@ -1,0 +1,404 @@
+DROP TABLE IF EXISTS `votingcentral`.`category`;
+CREATE TABLE `category` (
+  `CATEGORY_TYPE` varchar(32) NOT NULL default '',
+  `SUPER_CATEGORY` varchar(32) NOT NULL default '',
+  `CATEGORY` varchar(32) default NULL,
+  `SUB_CATEGORY` varchar(32) default NULL,
+  `CATEGORY_STATUS` varchar(32) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `EXPIRE_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`CATEGORY_TYPE`,`SUPER_CATEGORY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`contest_entries`;
+CREATE TABLE `contest_entries` (
+  `ENTRY_FILE_ID` varchar(36) NOT NULL default '',
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `POLL_ID` varchar(36) default NULL,
+  `USER_COMMENTS` text NOT NULL,
+  `KEYWORDS` varchar(64) NOT NULL default '',
+  `CONTEST_TYPE` varchar(32) NOT NULL default '',
+  `ENTRY_FILE_STATUS` varchar(32) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`ENTRY_FILE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`countries`;
+CREATE TABLE `countries` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  `NAME` varchar(48) default NULL,
+  `CODE` char(2) default NULL,
+  PRIMARY KEY  (`ID`),
+  KEY `kCountry` (`NAME`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `votingcentral`.`fips_10_4`;
+CREATE TABLE `fips_10_4` (
+  `state_id` int(10) unsigned NOT NULL auto_increment,
+  `country_code` varchar(16) NOT NULL default '',
+  `state_number` varchar(16) NOT NULL default '',
+  `state_name` varchar(45) NOT NULL default '',
+  PRIMARY KEY  (`state_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='fips 10 4 region codes';
+
+DROP TABLE IF EXISTS `votingcentral`.`mail`;
+CREATE TABLE `mail` (
+  `mail_id` bigint(20) unsigned NOT NULL auto_increment,
+  `type_id` int(11) NOT NULL default '0',
+  `from_address` varchar(64) NOT NULL default '',
+  `to_address` varchar(64) NOT NULL default '',
+  `cc_address` varchar(64) default NULL,
+  `bcc_address` varchar(64) default NULL,
+  `subject` varchar(64) NOT NULL default '',
+  `reply_address` varchar(64) NOT NULL default '',
+  `content` text NOT NULL,
+  `retry_count` int(11) NOT NULL default '0',
+  `start_timestamp` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `success_timestamp` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `last_retry_timestamp` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `next_retry_timestamp` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`mail_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`message`;
+CREATE TABLE `message` (
+  `MESSAGE_ID` varchar(36) NOT NULL default '',
+  `MESSAGE_IMAGE_ID` varchar(36) default NULL,
+  `SUBJECT_ID` varchar(36) NOT NULL default '',
+  `MESSAGE` text NOT NULL,
+  `RESPONSE_TO_ID` varchar(36) NOT NULL default '',
+  `CREATOR_EMAIL_ID` bigint(20) NOT NULL default '0',
+  `CREATOR_IP_ADDRESS` varchar(32) default NULL,
+  `FILTER_IND` enum('Y','N') NOT NULL default 'Y',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`MESSAGE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`message_board`;
+CREATE TABLE `message_board` (
+  `MESSAGE_BOARD_ID` varchar(36) NOT NULL default '',
+  `CREATOR_EMAIL_ID` bigint(20) default NULL,
+  `CREATOR_IP_ADDRESS` varchar(32) default NULL,
+  `CREATE_TIMESTAMP` timestamp NULL default NULL,
+  `MODIFY_TIMESTAMP` timestamp NULL default NULL,
+  `MSG_BOARD_START_TIMESTAMP` timestamp NULL default NULL,
+  `MSG_BOARD_END_TIMESTAMP` timestamp NULL default NULL,
+  PRIMARY KEY  (`MESSAGE_BOARD_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`partner_info`;
+CREATE TABLE `partner_info` (
+  `LOGIN_NAME` varchar(64) NOT NULL default '',
+  PRIMARY KEY  (`LOGIN_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`personal_config`;
+CREATE TABLE `personal_config` (
+  `USER_ID` bigint(20) unsigned NOT NULL default '0',
+  `USER_NAME` varchar(32) NOT NULL default '',
+  `EMAIL_CONFIRM_CODE` varchar(8) default NULL,
+  `SECURITY_QUESTION` varchar(128) default NULL,
+  `SECURITY_ANSWER` varchar(32) default NULL,
+  `ENC_PASSWORD` varchar(255) NOT NULL default '',
+  `TEMP_PASSWORD` varchar(16) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`USER_ID`),
+  KEY `PERSONAL_CONFIG_FKIndex1` (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`poll_comments`;
+CREATE TABLE `poll_comments` (
+  `COMMENT_ID` bigint(20) NOT NULL auto_increment,
+  `POLL_ID` varchar(36) NOT NULL default '',
+  `COMMENT_TEXT` text NOT NULL,
+  `USER_NAME` varchar(32) NOT NULL default '',
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `USER_IP_ADDRESS` varchar(32) NOT NULL default '',
+  `FILTER_IND` char(1) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`COMMENT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`poll_user_history`;
+CREATE TABLE `poll_user_history` (
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `POLL_ID` varchar(36) NOT NULL default '',
+  `QUESTION_ID` varchar(36) NOT NULL default '',
+  `ANSWER_ID` varchar(36) NOT NULL default '',
+  `ANSWER_TEXT` text,
+  `USER_IP_ADDRESS` varchar(32) NOT NULL default '',
+  `USER_LOCATION_CITY` varchar(64) NOT NULL default '',
+  `USER_LOCATION_STATE` int(11) default NULL,
+  `USER_LOCATION_ZIP` varchar(8) default NULL,
+  `USER_LOCATION_COUNTRY` int(11) default NULL,
+  `YOB` int(11) NOT NULL default '0',
+  `GENDER` char(1) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `POLL_USER_HISTORY_ID` bigint(20) unsigned NOT NULL auto_increment,
+  PRIMARY KEY  (`POLL_USER_HISTORY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`polls`;
+CREATE TABLE `polls` (
+  `POLL_ID` varchar(36) NOT NULL default '',
+  `MASTER_POLL_ID` varchar(36) default NULL,
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `POLL_TYPE` varchar(32) NOT NULL default '',
+  `POLL_NAME` varchar(64) NOT NULL default '',
+  `POLL_DESC` text NOT NULL,
+  `POLL_PRIVACY_LEVEL` varchar(32) NOT NULL default '',
+  `POLL_PRIORITY` int(11) NOT NULL default '0',
+  `POLL_KEYWORDS` text NOT NULL,
+  `POLL_CATEGORY1` varchar(32) NOT NULL default '',
+  `POLL_CATEGORY2` varchar(32) default NULL,
+  `POLL_CATEGORY3` varchar(32) default NULL,
+  `POLL_TOTAL_VOTES` bigint(20) NOT NULL default '0',
+  `POLL_STATUS` varchar(32) NOT NULL default '',
+  `POLL_DATA` text NOT NULL,
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `START_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `END_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `EXPIRE_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `BLOCK_OUT_PERIOD_MS` bigint(20) default NULL,
+  `VIEWS_COUNT` bigint(20) NOT NULL default '0',
+  `POLL_STARTED_EMAIL_SENT` int(11) default NULL,
+  `UNFINISHED_POLL_REMINDER_COUNT` int(10) unsigned NOT NULL default '0',
+  `UFP_REMINDER_LAST_SENT_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`POLL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`states`;
+CREATE TABLE `states` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  `COUNTRY_ID` int(10) unsigned default NULL,
+  `CODE` varchar(2) default NULL,
+  `NAME` varchar(48) default NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`subject_board`;
+CREATE TABLE `subject_board` (
+  `SUBJECT_ID` varchar(36) NOT NULL default '',
+  `MESSAGE_BOARD_ID` varchar(36) NOT NULL default '',
+  `SUBJECT` varchar(64) NOT NULL default '',
+  `CREATOR_EMAIL_ID` bigint(20) NOT NULL default '0',
+  `CREATOR_IP_ADDRESS` varchar(32) NOT NULL default '',
+  `FILTER_IND` enum('Y','N') NOT NULL default 'Y',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `CREATOR_LOCATION` varchar(255) default NULL,
+  `FILE_ID` varchar(36) default NULL,
+  PRIMARY KEY  (`SUBJECT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`taf_log`;
+CREATE TABLE `taf_log` (
+  `TAF_REQUEST_ID` bigint(20) NOT NULL auto_increment,
+  `SENDER_IP_ADDRESS` varchar(32) NOT NULL default '',
+  `SENDER_EMAIL_ADDRESS` varchar(64) NOT NULL default '',
+  `RECEIVER_EMAIL_ADDRESS` varchar(64) NOT NULL default '',
+  `TAF_URL` text NOT NULL,
+  `TAF_TYPE` int(11) NOT NULL default '0',
+  `TAF_SENT_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `SENDER_USER_ID` bigint(20) NOT NULL default '0',
+  PRIMARY KEY  (`TAF_REQUEST_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`user_roles`;
+CREATE TABLE `user_roles` (
+  `USER_NAME` varchar(32) NOT NULL default '',
+  `ROLE_NAME` varchar(20) NOT NULL default ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_content`;
+CREATE TABLE `vc_content` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `TABLE_NAME` varchar(64) NOT NULL default '',
+  `COLUMN_NAME` varchar(32) NOT NULL default '',
+  `WHERE_ID1` varchar(32) NOT NULL default '',
+  `WHERE_VALUE1` varchar(64) NOT NULL default '',
+  `WHERE_ID2` varchar(32) default NULL,
+  `WHERE_VALUE2` varchar(64) default NULL,
+  `WHERE_ID3` varchar(32) default NULL,
+  `WHERE_VALUE3` varchar(64) default NULL,
+  `CONTENT` text NOT NULL,
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`ID`),
+  FULLTEXT KEY `SEARCH_INDEX` (`CONTENT`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_files`;
+CREATE TABLE `vc_files` (
+  `FILE_ID` varchar(36) NOT NULL default '',
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `FILE_TYPE` varchar(32) NOT NULL default '',
+  `FILE_NAME` varchar(64) NOT NULL default '',
+  `FILE_MIME_TYPE` varchar(32) NOT NULL default '',
+  `FILE_CONTENT` longblob NOT NULL,
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`FILE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_fp_reservation`;
+CREATE TABLE `vc_fp_reservation` (
+  `RESERVATION_ID` int(10) unsigned NOT NULL auto_increment,
+  `FROM_YEAR` int(10) unsigned NOT NULL default '0',
+  `FROM_MONTH` int(10) unsigned NOT NULL default '0',
+  `FROM_DAY` int(10) unsigned NOT NULL default '0',
+  `FROM_HOUR` int(10) unsigned NOT NULL default '0',
+  `TO_YEAR` int(10) unsigned NOT NULL default '0',
+  `TO_MONTH` int(10) unsigned NOT NULL default '0',
+  `TO_DAY` int(10) unsigned NOT NULL default '0',
+  `TO_HOUR` int(10) unsigned NOT NULL default '0',
+  `RESERVATION_STATUS_ID` int(10) unsigned NOT NULL default '0',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `POLL_ID` varchar(36) NOT NULL default '',
+  `POLL_OWNER_ID` bigint(20) unsigned NOT NULL default '0',
+  `POLL_ON_HP_STARTED_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `POLL_ON_HP_ENDED_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `IS_MONEY_RECEIVED` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`RESERVATION_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='VotingCentral Featured Poll Reservations.';
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_parameter`;
+CREATE TABLE `vc_parameter` (
+  `PARAMETER_ID` bigint(20) unsigned NOT NULL auto_increment,
+  `PARAMETER_NAME` varchar(45) NOT NULL default '',
+  `PARAMETER_VALUE` varchar(45) NOT NULL default '',
+  `PARAMETER_LAST_MODIFIED` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`PARAMETER_ID`),
+  UNIQUE KEY `PNAME_UNIQUE` (`PARAMETER_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_user`;
+CREATE TABLE `vc_user` (
+  `USER_ID` bigint(20) NOT NULL auto_increment,
+  `FIRST_NAME` varchar(64) default NULL,
+  `LAST_NAME` varchar(64) default NULL,
+  `MIDDLE_INITIAL` varchar(4) default NULL,
+  `MIDDLE_NAME` varchar(64) default NULL,
+  `EMAIL_ADDRESS` varchar(64) NOT NULL default '',
+  `DOB` int(11) default NULL,
+  `MOB` int(11) default NULL,
+  `YOB` int(11) NOT NULL default '0',
+  `GENDER` char(1) NOT NULL default '',
+  `USER_NAME` varchar(32) NOT NULL default '',
+  `DISPLAY_USER_NAME` varchar(32) NOT NULL default '',
+  `MAILING_ADDRESS1` varchar(64) default NULL,
+  `MAILING_ADDRESS2` varchar(64) default NULL,
+  `CITY` varchar(64) NOT NULL default '',
+  `STATE` int(10) unsigned NOT NULL default '0',
+  `ZIP_CODE1` varchar(8) default NULL,
+  `ZIP_CODE2` varchar(5) default NULL,
+  `COUNTRY` int(10) unsigned NOT NULL default '0',
+  `PHONE_COUNTRY_CODE` varchar(8) default NULL,
+  `PHONE_AREA_CODE` varchar(8) default NULL,
+  `PHONE_NUM_1` varchar(8) default NULL,
+  `PHONE_NUM_2` varchar(8) default NULL,
+  `ACCOUNT_STATUS` varchar(32) NOT NULL default '',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_user_info`;
+CREATE TABLE `vc_user_info` (
+  `user_id` bigint(20) NOT NULL default '0',
+  `profile_public` int(11) NOT NULL default '0',
+  `race` int(11) default NULL,
+  `race_public` int(11) default NULL,
+  `salary` int(11) default NULL,
+  `salary_public` int(11) default NULL,
+  `union_member` int(11) default NULL,
+  `um_public` int(11) default NULL,
+  `education` int(11) default NULL,
+  `education_public` int(11) default NULL,
+  `party_id` int(11) default NULL,
+  `party_public` int(11) default NULL,
+  `ideology` int(11) default NULL,
+  `ideology_public` int(11) default NULL,
+  `religion` int(11) default NULL,
+  `religion_public` int(11) default NULL,
+  `zodiac` int(11) default NULL,
+  `zodiac_public` int(11) default NULL,
+  `marital_status` int(11) default NULL,
+  `marital_public` int(11) default NULL,
+  `image_id` varchar(36) default NULL,
+  `image_public` int(11) default NULL,
+  `children` int(11) default NULL,
+  `children_public` int(11) default NULL,
+  `smoke` int(11) default NULL,
+  `smoke_public` int(11) default NULL,
+  `drink` int(11) default NULL,
+  `drink_public` int(11) default NULL,
+  `favorite_quote` varchar(128) default NULL,
+  `url` varchar(128) default NULL,
+  `create_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `modify_timestamp` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `sex_orient` int(11) default NULL,
+  `sex_orient_public` int(11) default NULL,
+  `profile_view_count` bigint(20) NOT NULL default '0',
+  `about_me` text,
+  `t_shirt_size` int(11) default NULL,
+  `t_shirt_size_public` int(11) default NULL,
+  PRIMARY KEY  (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_user_links`;
+CREATE TABLE `vc_user_links` (
+  `LINK_ID` bigint(20) NOT NULL auto_increment,
+  `SOURCE_USER_ID` bigint(20) default '0',
+  `SOURCE_USER_EMAIL` varchar(128) default NULL,
+  `SOURCE_USER_NAME` varchar(32) default NULL,
+  `DEST_USER_ID` bigint(20) default '0',
+  `DEST_USER_EMAIL` varchar(128) default NULL,
+  `DEST_USER_NAME` varchar(32) default NULL,
+  `LINK_STATE` int(11) NOT NULL default '0',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `LINK_COMMENTS` text,
+  `ACCEPT_CODE` varchar(36) NOT NULL default '',
+  `REJECT_CODE` varchar(36) NOT NULL default '',
+  PRIMARY KEY  (`LINK_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_user_prefs`;
+CREATE TABLE `vc_user_prefs` (
+  `USER_ID` bigint(20) unsigned NOT NULL auto_increment,
+  `POLL_STARTED_EMAIL` int(11) default NULL,
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`USER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User Preferences for VC users';
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_vaco_points`;
+CREATE TABLE `vc_vaco_points` (
+  `POINTS_ID` bigint(20) unsigned NOT NULL auto_increment,
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `POINTS` int(11) NOT NULL default '0',
+  `CREATE_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `MODIFY_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`POINTS_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `votingcentral`.`vc_winners`;
+CREATE TABLE `vc_winners` (
+  `WIN_ID` bigint(20) NOT NULL auto_increment,
+  `USER_ID` bigint(20) NOT NULL default '0',
+  `WIN_TYPE_CODE` int(11) NOT NULL default '0',
+  `START_TIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `END_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `POLL_ID` varchar(36) default NULL,
+  `CREATE_TIMESTAMP` timestamp NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`WIN_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

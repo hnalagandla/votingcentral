@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action2" ID="#logout"
+  TYPE="action" PATH="/logout" SHAPE="32,417,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="home" ID="home" TYPE="forward" PATH="/home.do" TARGET="action4"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action6"
+  TITLE="regUserFormBean" ID="#regNewUser" TYPE="action"
+  PATH="/regNewUser" SHAPE="464,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="register" ID="register" TYPE="forward" PATH="new.user.reg" TARGET="page3"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="enterConfCode" ID="enterConfCode" TYPE="forward"
+   PATH="/regNewUser/enterCode.do?action=showEnterCode" TARGET="action11"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0"
+  TITLE="new.user.conf.code" TYPE="page" SUBTYPE="tile"
+  PATH="new.user.conf.code" SHAPE="688,34,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  TITLE="new.user.confirmed" TYPE="page" SUBTYPE="tile"
+  PATH="new.user.confirmed" SHAPE="256,34,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  TITLE="vc.home.page" TYPE="page" SUBTYPE="tile" PATH="vc.home.page" SHAPE="256,434,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3"
+  TITLE="new.user.reg" TYPE="page" SUBTYPE="tile" PATH="new.user.reg" SHAPE="688,178,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  TITLE="passwdsent" TYPE="page" SUBTYPE="tile" PATH="passwdsent" SHAPE="256,802,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8" TITLE="vc.login"
+  TYPE="page" SUBTYPE="tile" PATH="vc.login" SHAPE="240,914,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page9"
+  TITLE="forgot.password" TYPE="page" SUBTYPE="tile"
+  PATH="forgot.password" SHAPE="448,273,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  TITLE="login.failed" TYPE="page" SUBTYPE="tile" PATH="login.failed" SHAPE="240,1121,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action1"
+  TITLE="regUserFormBean" ID="#regNewUser#e#confAcct" TYPE="action"
+  PATH="/regNewUser/e/confAcct" SHAPE="32,977,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="failed" ID="failed" TYPE="forward"
+   PATH="/regNewUser/enterCode.do?action=showEnterCode" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/regNewUser/confirmed.do?action=showSuccess" TARGET="action12"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="showEnterCode" ID="showEnterCode" TYPE="forward"
+   PATH="new.user.conf.code" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action3"
+  TITLE="regUserFormBean" ID="#regNewUser#w#confAcct" TYPE="action"
+  PATH="/regNewUser/w/confAcct" SHAPE="512,609,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="failed" ID="failed" TYPE="forward"
+   PATH="/regNewUser/enterCode.do?action=showEnterCode" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="success" ID="success" TYPE="forward"
+   PATH="/regNewUser/confirmed.do?action=showSuccess" TARGET="action12"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="showEnterCode" ID="showEnterCode" TYPE="forward"
+   PATH="new.user.conf.code" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action12"
+  TITLE="regUserFormBean" ID="#regNewUser#confirmed" TYPE="action"
+  PATH="/regNewUser/confirmed" SHAPE="32,497,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showSuccess" ID="showSuccess" TYPE="forward"
+   PATH="new.user.confirmed" TARGET="page1"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="enterConfCode" ID="enterConfCode" TYPE="forward"
+   PATH="/regNewUser/enterCode.do?action=showEnterCode" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="register" ID="register" TYPE="forward" PATH="/regNewUser.do" TARGET="action6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action5"
+  TITLE="regUserFormBean" ID="#ChallengeGif" TYPE="action"
+  PATH="/ChallengeGif" SHAPE="32,1409,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action11"
+  TITLE="regUserFormBean" ID="#regNewUser#enterCode" TYPE="action"
+  PATH="/regNewUser/enterCode" SHAPE="880,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="showEnterCode" ID="showEnterCode" TYPE="forward"
+   PATH="new.user.conf.code" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action9"
+  TITLE="loginForm" ID="#failedLogin" TYPE="action" PATH="/failedLogin" SHAPE="32,1393,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="failedLogin" ID="failedLogin" TYPE="forward"
+   PATH="vc.failed.login" TARGET="page10"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action15"
+  TITLE="passwdReminderForm" ID="#forgotPasswd" TYPE="action"
+  SUBTYPE="parameter" PATH="/forgotPasswd" SHAPE="752,865,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action15"
+   TITLE="parameter" TYPE="forward" PATH="forgot.password" TARGET="page9"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action16"
+  TITLE="passwdReminderForm" ID="#remindPasswd" TYPE="action"
+  PATH="/remindPasswd" SHAPE="288,865,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="forgotPswd" ID="forgotPswd" TYPE="forward"
+   PATH="forgot.password" TARGET="page9"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="success" ID="success" TYPE="forward" PATH="/passwdSent.do" TARGET="action17"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action17"
+  TITLE="passwdReminderForm" ID="#passwdSent" TYPE="action"
+  SUBTYPE="parameter" PATH="/passwdSent" SHAPE="512,849,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action17"
+   TITLE="parameter" TYPE="forward" PATH="passwdsent" TARGET="page5"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  TITLE="vc.user.public.profile" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.public.profile" SHAPE="240,1393,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action4" ID="#home"
+  TYPE="action" SUBTYPE="unknown" PATH="/home" SHAPE="240,529,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action7"
+  TITLE="loginForm" ID="#login#loginUser" TYPE="action"
+  PATH="/login/loginUser" SHAPE="32,1217,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="login" ID="login" TYPE="forward" PATH="vc.login" TARGET="page8"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="failed" ID="failed" TYPE="forward" PATH="/login/loginUser.do" TARGET="action7"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page10"
+  TITLE="vc.failed.login" TYPE="page" SUBTYPE="tile"
+  PATH="vc.failed.login" SHAPE="448,1393,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action8"
+  TITLE="regUserFormBean" ID="#regNewUser#resendConfCode" TYPE="action"
+  PATH="/regNewUser/resendConfCode" SHAPE="720,689,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="enterConfCode" ID="enterConfCode" TYPE="forward"
+   PATH="/regNewUser/enterCode.do?action=showEnterCode" TARGET="action11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="showEnterCode" ID="showEnterCode" TYPE="forward"
+   PATH="new.user.conf.code" TARGET="page0"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action19"
+  TITLE="homeFormBean" ID="#p#user#edit#myRegInfo" TYPE="action"
+  PATH="/p/user/edit/myRegInfo" SHAPE="496,817,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="newUserReg" ID="newUserReg" TYPE="forward" PATH="new.user.reg" TARGET="page3"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action10"
+  TITLE="manageMyImageForm" ID="#p#user#manageImage" TYPE="action"
+  PATH="/p/user/manageImage" SHAPE="32,2001,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="myimage" ID="myimage" TYPE="forward"
+   PATH="vc.user.manage.image" TARGET="page7"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="self" ID="self" TYPE="forward" PATH="/p/user/manageImage.do" TARGET="action10"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7"
+  TITLE="vc.user.manage.image" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.manage.image" SHAPE="240,2018,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action13"
+  TITLE="manageMyProfileForm" ID="#p#user#manageProfile" TYPE="action"
+  PATH="/p/user/manageProfile" SHAPE="32,1665,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="myprofile" ID="myprofile" TYPE="forward"
+   PATH="vc.user.manage.profile" TARGET="page11"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="self" ID="self" TYPE="forward" PATH="/p/user/manageProfile.do" TARGET="action13"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action20"
+  TITLE="managePswdForm" ID="#p#user#managePswd" TYPE="action"
+  PATH="/p/user/managePswd" SHAPE="32,1777,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="mypswd" ID="mypswd" TYPE="forward"
+   PATH="vc.user.manage.passwd" TARGET="page12"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward2"
+   TITLE="self" ID="self" TYPE="forward" PATH="/p/user/managePswd.do" TARGET="action20"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page11"
+  TITLE="vc.user.manage.profile" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.manage.profile" SHAPE="240,1665,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page12"
+  TITLE="vc.user.manage.passwd" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.manage.passwd" SHAPE="240,1889,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action14"
+  TITLE="requestConnectForm" ID="#p#connectInvite" TYPE="action"
+  PATH="/p/connectInvite" SHAPE="496,817,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="connectRequestShow" ID="connectRequestShow" TYPE="forward"
+   PATH="vc.user.connect.invite" TARGET="page13"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="connectRequestSent" ID="connectRequestSent" TYPE="forward"
+   PATH="vc.user.connect.invite.sent" TARGET="page14"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page13"
+  TITLE="vc.user.connect.invite" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.connect.invite" SHAPE="704,929,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action18"
+  TITLE="vcUserPPForm" ID="#vcUser" TYPE="action" PATH="/vcUser" SHAPE="32,1665,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="vcUserPublic" ID="vcUserPublic" TYPE="forward"
+   PATH="vc.user.public.profile" TARGET="page6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action0"
+  TITLE="vcUserPPForm" ID="#vcUserPublic" TYPE="action"
+  PATH="/vcUserPublic" SHAPE="32,1665,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="vcUserPublic" ID="vcUserPublic" TYPE="forward"
+   PATH="vc.user.public.profile" TARGET="page6"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action21"
+  TITLE="requestConnectForm" ID="#p#connect" TYPE="action"
+  PATH="/p/connect" SHAPE="448,2177,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="connectAcceptRejectShow" ID="connectAcceptRejectShow"
+   TYPE="forward" PATH="vc.user.connect.accept.reject.show" TARGET="page15"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page14"
+  TITLE="vc.user.connect.invite.sent" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.connect.invite.sent" SHAPE="912,817,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page15"
+  TITLE="vc.user.connect.accept.reject.show" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.connect.accept.reject.show" SHAPE="656,2177,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action23"
+  TITLE="manageConnectsForm" ID="#p#user#manageConnects" TYPE="action"
+  PATH="/p/user/manageConnects" SHAPE="32,2545,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="manageConnects" ID="manageConnects" TYPE="forward"
+   PATH="vc.user.manage.connects" TARGET="page17"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page17"
+  TITLE="vc.user.manage.connects" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.manage.connects" SHAPE="240,2562,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action25"
+  TITLE="vcWinnersForm" ID="#vcWinners" TYPE="action" PATH="/vcWinners" SHAPE="32,3441,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="vcWinners" ID="vcWinners" TYPE="forward" PATH="vc.winners" TARGET="page19"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page19"
+  TITLE="vc.winners" TYPE="page" SUBTYPE="tile" PATH="vc.winners" SHAPE="240,3441,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action22"
+  TITLE="manageConnectsForm" ID="#allConnects" TYPE="action"
+  PATH="/allConnects" SHAPE="32,3105,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="allConnects" ID="allConnects" TYPE="forward"
+   PATH="vc.user.all.connects" TARGET="page18"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page18"
+  TITLE="vc.user.all.connects" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.all.connects" SHAPE="240,3105,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action24"
+  TITLE="managePrefsForm" ID="#p#user#managePrefs" TYPE="action"
+  PATH="/p/user/managePrefs" SHAPE="32,3441,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="self" ID="self" TYPE="forward" PATH="/p/user/managePrefs.do" TARGET="action24"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="myprefs" ID="myprefs" TYPE="forward"
+   PATH="vc.user.manage.prefs" TARGET="page16"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page16"
+  TITLE="vc.user.manage.prefs" TYPE="page" SUBTYPE="tile"
+  PATH="vc.user.manage.prefs" SHAPE="256,3458,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action26"
+  TITLE="homeFormBean" ID="#activeUsers" TYPE="action"
+  PATH="/activeUsers" SHAPE="32,3905,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward1"
+   TITLE="activeUsers" ID="activeUsers" TYPE="forward"
+   PATH="vc.active.users" TARGET="page20"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page20"
+  TITLE="vc.active.users" TYPE="page" SUBTYPE="tile"
+  PATH="vc.active.users" SHAPE="240,3905,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action27"
+  TITLE="homeFormBean" ID="#activeusers" TYPE="action"
+  PATH="/activeusers" SHAPE="32,4353,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="activeUsers" ID="activeUsers" TYPE="forward"
+   PATH="vc.active.users" TARGET="page20"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action28"
+  TITLE="homeFormBean" ID="#recentUsers" TYPE="action"
+  PATH="/recentUsers" SHAPE="32,4465,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="recentUsers" ID="recentUsers" TYPE="forward"
+   PATH="vc.recent.users" TARGET="page21"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page21"
+  TITLE="vc.recent.users" TYPE="page" SUBTYPE="tile"
+  PATH="vc.recent.users" SHAPE="256,4482,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action29"
+  TITLE="homeFormBean" ID="#recentusers" TYPE="action"
+  PATH="/recentusers" SHAPE="32,4577,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="recentUsers" ID="recentUsers" TYPE="forward"
+   PATH="vc.recent.users" TARGET="page21"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action30"
+  TITLE="vcLeadersForm" ID="#vcLeaders" TYPE="action" PATH="/vcLeaders" SHAPE="32,5057,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="forward0"
+   TITLE="vcLeaders" ID="vcLeaders" TYPE="forward" PATH="vc.leaders" TARGET="page22"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page22"
+  TITLE="vc.leaders" TYPE="page" SUBTYPE="tile" PATH="vc.leaders" SHAPE="240,5074,0,0"/>
+</PROCESS>

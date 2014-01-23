@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+	<form-bean name="adminFormBean"
+			type="com.votingcentral.forms.admin.AdminFormBean" />		
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action input="admin.main" name="adminFormBean"
+			path="/admin/main" scope="request" parameter="action"
+			type="com.votingcentral.actions.admin.AdminAction">
+			<forward name="editPoll" path="/p/createPoll/pollBasics.do?action=pollBasics"
+				redirect="true" />
+			<forward name="adminMsgBrds"
+				path="/jsp/admin/msgBoard/msgBrdMain.jsp"
+				redirect="false" />
+			<forward name="adminUsers"
+				path="/jsp/admin/user/userMain.jsp" redirect="false" />
+			<forward name="adminContests" path="admin.contests.main"
+				redirect="false" />
+			<forward name="adminMain" path="admin.main"
+				redirect="false" />				
+		</action>
+		<action name="pollsAdminForm"
+			path="/admin/poll" scope="request"  parameter="action"
+			type="com.votingcentral.actions.admin.polls.PollsAdminAction">
+			<forward name="editPoll" path="polls.main"
+				redirect="false" />
+			<forward name="previewPoll" path="/p/previewPoll.do"
+				redirect="false" />				
+		</action>
+		<action input="/jsp/admin/contests/main.jsp"
+			name="adminFormBean" path="/admin/contests/main"
+			scope="request"
+			type="com.votingcentral.actions.admin.AdminAction"
+			parameter="action">
+			<forward name="approveRejectContests"
+				path="admin.contests.approve.reject" redirect="false" />
+			<forward name="editContests" path="admin.contests.edit"
+				redirect="false" />
+		</action>
+		<action input="admin.contests.approve.reject" name="contestForm"
+			path="/admin/contests/approveReject" scope="request"
+			type="com.votingcentral.actions.contests.ContestsAction"
+			parameter="action">
+			<forward name="process" path="admin.contests.approve.reject"
+				redirect="false" />
+			<forward name="done" path="admin.main" redirect="false" />
+		</action>					
+	</action-mappings>
+</struts-config>

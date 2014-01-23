@@ -1,0 +1,71 @@
+
+
+<div>
+<table border="0" cellpadding="5" cellspacing="1" width="100%"
+	class="darkgreybg">
+	<tr>
+		<td id="greenTitle">{0}</td>
+	</tr>
+	<tr>
+		<td bgcolor="#F2F2F2" style="padding:5px;">
+		<!-- content starts here -->
+		<table width="100%" border="0" cellspacing="1" cellpadding="2">
+			<tr>
+				<td colspan="2">
+				<center>
+				<table width="100%" cellspacing="0" cellpadding="1" border="0">
+
+					<form name="VotingCentral" method="post"
+						action="http://www.votingcentral.com/VotingCentral/p/h/castAVote1.do?action=voteFromRemote">
+						<input
+						type="hidden" name="pollId"
+						value="{1}">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td valign="middle" width="20%">
+							<table border="0" cellpadding="5" cellspacing="1"
+								bgcolor="#e5e1de" style="width:160px;height:117px;">
+								<tr>
+									<td align="center" valign="middle" bgcolor="#FFFFFF"><a
+										href="javascript:void(0);"><img
+										src="http://www.votingcentral.com/VotingCentral/ShowImage.do?&amp;imageId={2}&amp;w={3}&amp;h={4}"
+										border="0" hspace="0" onmouseover="show_200("
+										"http://www.votingcentral.com/votingcentral/showimage.do?&amp;imageid="{5}&amp;w={6}&amp;h={7}"
+										","{8}",{9},{10}) onmouseout="hide_div()" onerror="gag(this,100)"
+										alt=""></a></td>
+								</tr>
+							</table>
+
+							</td>
+
+							<td class="txtquestion" valign="middle">{11}<input type="hidden" name="questionId"
+								value="{12}"></td>
+						</tr>
+					</table>
+					<div><img src="http://www.votingcentral.com/VotingCentral/images/s.gif" width="1" height="2"
+						alt=""></div>
+					<input type="hidden" name="questionId"
+						value="{13}">
+					<!-- All the answers go here. multiple occurances of remotePollAnswer.html-->	
+					{14}	
+					<div><img src="http://www.votingcentral.com/VotingCentral/images/s.gif" width="1" height="10"
+						alt=""></div>
+
+
+					<div style="padding-bottom:5px;"><input type="Submit" value="Vote"
+						onclick="this.form.action=http://www.votingcentral.com/VotingCentral/p/h/castAVote1.do?action=voteFromHome; this.disabled=true;"
+						class="btn" style="width:70px;height:30px;" /></div>
+					<center></center>
+					</form>
+					<td></td>
+					<tr></tr>
+				</table>
+				<!-- content ends here --></center>
+				</td>
+			</tr>
+		</table>
+		<div></div>
+		</td>
+	</tr>
+</table>
+</div>

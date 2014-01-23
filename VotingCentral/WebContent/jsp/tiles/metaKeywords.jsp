@@ -1,0 +1,2 @@
+<%@page language="java" import="com.votingcentral.util.request.RequestParameterObjects"%><%=request.getAttribute(RequestParameterObjects.COMMA_SEP_KEYWORDS)%>
+<%-- make sure the print of keywords stay in the top line.--%>

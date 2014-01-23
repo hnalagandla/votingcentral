@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="chartForm" type="com.votingcentral.forms.chart.ChartForm" />		
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>		
+		<action path="/p/showChart"
+			name="chartForm"
+			type="com.votingcentral.actions.chart.ShowChartAction"
+			parameter="action">
+			<forward name="barMain" path="bar.graph" redirect="false" />
+			<forward name="pieMain" path="pie.chart" redirect="false" />			
+			<forward name="gender" path="gender.graph" redirect="false" />						
+			<forward name="location" path="location.graph" redirect="false" />
+			<forward name="dist" path="dist.chart" redirect="false" />			
+			<forward name="showPoll" path="/p/displayPoll.do?action=showPoll" redirect="false" />					
+		</action>
+	</action-mappings>
+</struts-config>

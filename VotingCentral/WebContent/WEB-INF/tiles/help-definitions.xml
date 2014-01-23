@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name=".header" page="/jsp/tiles/header.jsp" />
+	<definition name=".rightsidebar" page="/jsp/tiles/rightSideBar.jsp" />
+	<definition name=".leftsidebar" page="/jsp/tiles/leftSideBar.jsp" />
+	<definition name=".footer" page="/jsp/tiles/footer.jsp" />
+	<definition name=".metakeywords" page="/jsp/tiles/metaKeywords.jsp" />
+
+	<definition name="vcTemplate"
+		page="/jsp/tiles/vcMainTemplate.jsp">
+		<put name="title" type="string"
+			value="Welcome to VotingCentral. Your vote can be the difference!!" />
+		<put name="metakeywords" value=".metakeywords" />
+		<put name="header" value=".header" />
+		<put name="leftSideBar" value=".leftsidebar" />
+		<put name="rightSideBar" value=".rightsidebar" />
+		<put name="pageContent"
+			value="/jsp/tiles/defaultContentPage.jsp" />
+		<put name="footer" value=".footer" />
+	</definition>
+
+	
+	<definition name="about.us" extends="vcTemplate">
+		<put name="title" value="About VotingCentral" />
+		<put name="pageContent" value="/jsp/static/help/aboutUs.jsp" />
+	</definition>	
+
+	<definition name="contact.us" extends="vcTemplate">
+		<put name="title" value="Contact VotingCentral" />
+		<put name="pageContent" value="/jsp/static/help/contactUs.jsp" />
+	</definition>
+
+	<definition name="faq" extends="vcTemplate">
+		<put name="title" value="Voting Central Faq" />
+		<put name="pageContent" value="/jsp/static/help/faq.jsp" />
+	</definition>
+	
+	<definition name="privacy.policy" extends="vcTemplate">
+		<put name="title" value="VotingCentral Privacy Policy" />
+		<put name="pageContent" value="/jsp/static/help/privacyPolicy.jsp" />
+	</definition>	
+	
+	<definition name="terms.and.conditions" extends="vcTemplate">
+		<put name="title" value="Terms and Conditions for using VotingCentral" />
+		<put name="pageContent" value="/jsp/static/help/tAndC.jsp" />
+	</definition>
+	
+	<definition name="prizes.faq" extends="vcTemplate">
+		<put name="title" value="VotingCentral Prizes FAQ" />
+		<put name="pageContent" value="/jsp/static/help/prizesFaq.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />
+	</definition>
+		
+	<definition name="prizes.tAndC" extends="vcTemplate">
+		<put name="title" value="VotingCentral Prizes Terms And Conditions" />
+		<put name="pageContent" value="/jsp/static/help/prizesTAndC.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />
+	</definition>
+
+</tiles-definitions>

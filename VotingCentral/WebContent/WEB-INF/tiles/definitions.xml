@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name=".header" page="/jsp/tiles/header.jsp" />
+	<definition name=".rightsidebar"
+		page="/jsp/tiles/rightSideBar.jsp" />
+	<definition name=".leftsidebar"
+		page="/jsp/tiles/leftSideBar.jsp" />
+	<definition name=".footer" page="/jsp/tiles/footer.jsp" />
+	<definition name=".metakeywords" page="/jsp/tiles/metaKeywords.jsp" />
+	
+	<definition name="vcTemplate"
+		page="/jsp/tiles/vcMainTemplate.jsp">
+		<put name="title" type="string"
+			value="Welcome to VotingCentral. Your vote can be the difference!!" />
+		<put name="metakeywords" value=".metakeywords" />	
+		<put name="header" value=".header" />
+		<put name="leftSideBar" value=".leftsidebar" />
+		<put name="rightSideBar" value=".rightsidebar" />
+		<put name="pageContent"
+			value="/jsp/tiles/defaultContentPage.jsp" />
+		<put name="footer" value=".footer" />
+	</definition>
+	<definition name="left.nav" page="/jsp/tiles/emptyTemplate.jsp">	
+		<put name="metakeywords" value="/jsp/tiles/empty.jsp" />	
+		<put name="header" value="/jsp/tiles/empty.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/empty.jsp" />
+		<put name="rightSideBar" value="/jsp/tiles/empty.jsp" />
+		<put name="footer" value="/jsp/tiles/empty.jsp" />
+    	<put name="title"
+			value="VotingCentral Left Nav Bar" />
+		<put name="pageContent"
+			value="/jsp/tiles/leftSideBar.jsp" />
+	</definition>		
+	
+	<definition name="vc.home.page" extends="vcTemplate">
+		<put name="pageContent" value="/jsp/home.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />		
+	</definition>
+	
+	<definition name="vc.login" extends="vcTemplate">	
+	<put name="title"
+			value="Please Login." />
+		<put name="pageContent"
+			value="/jsp/user/login.jsp" />
+	</definition>
+	<definition name="vc.failed.login" extends="vcTemplate">	
+	<put name="title"
+			value="Invalid Username/Password. Please retry..." />
+		<put name="pageContent"
+			value="/jsp/user/invalidLogin.jsp" />
+	</definition>
+	<definition name="admin.main" extends="vcTemplate">
+		<put name="title" value="Welcome Admin users!!" />
+		<put name="pageContent"
+			value="/jsp/admin/adminMain.jsp" />
+	</definition>
+
+	<definition name="polls.main" extends="vcTemplate">
+		<put name="title" value="Welcome Admin users!!" />
+		<put name="pageContent"
+			value="/jsp/admin/polls/pollsMain.jsp" />
+	</definition>
+
+	<definition name="create.poll" extends="vcTemplate">
+		<put name="title" value="VotingCentral -  Create a new Poll" />
+		<put name="pageContent"
+			value="/jsp/polls/create/pollBasics.jsp" />
+	</definition>
+
+	<definition name="preview.poll" extends="vcTemplate">
+		<put name="title" value="VotingCentral -  Preview the Poll" />
+		<put name="pageContent"
+			value="/jsp/polls/create/previewPoll.jsp" />
+	</definition>
+
+	<definition name="submit.poll" extends="vcTemplate">
+		<put name="title" value="VotingCentral -  Confirm the Poll" />
+		<put name="pageContent"
+			value="/jsp/polls/create/submitPoll.jsp" />
+	</definition>
+
+	<definition name="new.user.reg" extends="vcTemplate">
+		<put name="title" value="New User Registration" />
+		<put name="pageContent"
+			value="/jsp/user/new/userReg.jsp" />
+	</definition>	
+	<definition name="new.user.conf.code" extends="vcTemplate">
+		<put name="title" value="New User Registration - Enter Confirmation Code" />
+		<put name="pageContent"
+			value="/jsp/user/new/userConfirmCode.jsp" />
+	</definition>
+	<definition name="new.user.confirmed" extends="vcTemplate">
+		<put name="title" value="New User Registration - Confirmed" />
+		<put name="pageContent"
+			value="/jsp/user/new/userConfirm.jsp" />
+	</definition>	
+
+	<definition name="display.poll" extends="vcTemplate">
+		<put name="title" value=" VotingCentral Display Poll Info" />
+		<put name="pageContent"
+			value="/jsp/polls/displayPoll.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />	
+	</definition>
+
+	<definition name="display.poll.results" extends="vcTemplate">
+		<put name="title" value="VotingCentral Poll Results" />
+		<put name="pageContent"
+			value="/jsp/polls/displayPollResults.jsp" />
+	</definition>
+
+	<definition name="message.board" extends="vcTemplate">
+		<put name="title" value="Message Board" />
+		<put name="pageContent"
+			value="/jsp/msgboard/messageBoard.jsp" />
+	</definition>
+	<definition name="new.subject" extends="vcTemplate">
+		<put name="title" value="New Subject of discussion" />
+		<put name="pageContent"
+			value="/jsp/msgboard/newSubject.jsp" />
+	</definition>
+	<definition name="preview.subject" extends="vcTemplate">
+		<put name="title" value="New Subject of discussion" />
+		<put name="pageContent"
+			value="/jsp/msgboard/previewSubject.jsp" />
+	</definition>
+	<definition name="subject.discuss" extends="vcTemplate">
+		<put name="title" value="New Subject of discussion" />
+		<put name="pageContent"
+			value="/jsp/msgboard/subjectDiscuss.jsp" />
+	</definition>
+	
+	<definition name="edit.message" extends="vcTemplate">
+		<put name="title" value="Edit Message" />
+		<put name="pageContent"
+			value="/jsp/admin/msgBoard/editMessage.jsp" />
+	</definition>
+	
+	<definition name="search.index" extends="vcTemplate">
+		<put name="title" value="Voting Central Search" />
+		<put name="pageContent"
+			value="/jsp/search/index.jsp" />
+	</definition>
+
+	<definition name="search.results" extends="vcTemplate">
+		<put name="title" value="Voting Central Search Results" />
+		<put name="pageContent"
+			value="/jsp/search/results.jsp" />
+	</definition>
+
+	<definition name="taf.thanks" extends="vcTemplate">
+		<put name="title"
+			value="Thanks for Referring Voting Central to your friends." />
+		<put name="pageContent"
+			value="/jsp/friend/tafThanks.jsp" />
+	</definition>
+
+	<definition name="contests.main" extends="vcTemplate">
+		<put name="title" value="Welcome to Voting Central Contests." />
+		<put name="pageContent"
+			value="/jsp/contests/main.jsp" />
+	</definition>
+	
+	<definition name="contests.file.upload" extends="vcTemplate">
+		<put name="title" value="Welcome to Voting Central Contests. Enter a contest!" />
+		<put name="pageContent"
+			value="/jsp/contests/uploadFile.jsp" />
+	</definition>
+
+	<definition name="contests.file.upload.by.type" extends="vcTemplate">
+		<put name="title" value="Welcome to Voting Central Contests. Enter a contest!" />
+		<put name="pageContent"
+			value="/jsp/contests/uploadFileByType.jsp" />
+	</definition>
+
+	<definition name="contests.file.upload.success"
+		extends="vcTemplate">
+		<put name="title"
+			value="Congratulations !! File uploaded sucessfully" />
+		<put name="pageContent"
+			value="/jsp/contests/uploadSuccess.jsp" />
+	</definition>
+	
+	<definition name="taf" extends="vcTemplate">
+		<put name="title"
+			value="Thanks for Referring Voting Central to your friends." />
+		<put name="pageContent" value="/jsp/friend/taf.jsp" />
+	</definition>
+	
+	<definition name="taf.thanks" extends="vcTemplate">
+		<put name="title"
+			value="Thanks for Referring Voting Central to your friends." />
+		<put name="pageContent"
+			value="/jsp/friend/tafThanks.jsp" />
+	</definition>
+	
+	<definition name="admin.contests.main" extends="vcTemplate">
+		<put name="title" value="Administer Contests Panel." />
+		<put name="pageContent"
+			value="/jsp/admin/contests/main.jsp" />
+	</definition>
+	
+	<definition name="admin.contests.approve.reject"
+		extends="vcTemplate">
+		<put name="title"
+			value="Administer Contests Panel. Approve/Reject Contest " />
+		<put name="pageContent"
+			value="/jsp/admin/contests/approveReject.jsp" />
+	</definition>
+	
+	<definition name="admin.contests.edit" extends="vcTemplate">
+		<put name="title"
+			value="Administer Contests Panel. Edit Contest Files" />
+		<put name="pageContent"
+			value="/jsp/admin/contests/edit.jsp" />
+	</definition>
+	
+	<definition name="passwdsent" extends="vcTemplate">
+		<put name="title"
+			value="Forgot Password - Temp password emailed." />
+		<put name="pageContent"
+			value="/jsp/user/passwdSent.jsp" />
+	</definition>
+
+	<definition name="forgot.password" extends="vcTemplate">
+		<put name="title"
+			value="Forgot Password...recovery" />
+		<put name="pageContent"
+			value="/jsp/user/forgotPasswd.jsp" />
+	</definition>
+
+	<definition name="create.poll.poll.basics" extends="vcTemplate">	
+			<put name="title"
+			value="Basic information about the Poll." />
+		<put name="pageContent"
+			value="/jsp/polls/create/pollBasics.jsp" />
+	</definition>
+	
+	<definition name="unfinished.poll" extends="vcTemplate">	
+			<put name="title"
+			value="Finish your incomplete polls or Create a New Poll." />
+		<put name="pageContent"
+			value="/jsp/polls/create/unFinished.jsp" />
+	</definition>
+	
+	<definition name="create.poll.add.questions" extends="vcTemplate">	
+			<put name="title"
+			value="Add question and answers for your Poll." />
+		<put name="pageContent"
+			value="/jsp/polls/create/addQuestions.jsp" />
+	</definition>
+
+	<definition name="create.poll.select.times" extends="vcTemplate">	
+	<put name="title"
+			value="Set timings for your poll." />
+		<put name="pageContent"
+			value="/jsp/polls/create/pollTimings.jsp" />
+	</definition>
+	
+	<definition name="login.failed" extends="vcTemplate">	
+	<put name="title"
+			value="Invalid login and password, please try again." />
+		<put name="pageContent"
+			value="/jsp/user/invalidLogin.jsp" />
+	</definition>	
+
+	<definition name="bar.graph" extends="vcTemplate">	
+	<put name="title"
+			value="Bar Graph of Voting Results." />
+		<put name="pageContent"
+			value="/jsp/chart/barchart.jsp" />
+	</definition>	
+
+	<definition name="pie.chart" extends="vcTemplate">	
+	<put name="title"
+			value="Pie Chart of Voting Results." />
+		<put name="pageContent"
+			value="/jsp/chart/piechart.jsp" />
+	</definition>			
+
+	<definition name="gender.graph" extends="vcTemplate">	
+	<put name="title"
+			value="Voting Results by Gender." />
+		<put name="pageContent"
+			value="/jsp/chart/genderBarChart.jsp" />
+	</definition>			
+	
+	<definition name="location.graph" extends="vcTemplate">	
+	<put name="title"
+			value="Voting Results by Location." />
+		<put name="pageContent"
+			value="/jsp/chart/locationBarChart.jsp" />
+	</definition>			
+
+	<definition name="polls.by.cat" extends="vcTemplate">	
+	<put name="title"
+			value="Polls by Category." />
+		<put name="pageContent"
+			value="/jsp/polls/pollsByCat.jsp" />
+	</definition>		
+	
+	<definition name="most.voted.polls" extends="vcTemplate">	
+	<put name="title"
+			value="Most Voted Polls at VotingCentral." />
+		<put name="pageContent"
+			value="/jsp/polls/mostVotedPolls.jsp" />
+	</definition>			
+	<definition name="all.polls.created" extends="vcTemplate">	
+	<put name="title"
+			value="All Polls created by - " />
+		<put name="pageContent"
+			value="/jsp/polls/allPollsCreatedByAUser.jsp" />
+	</definition>			
+	<definition name="rec.ended.polls" extends="vcTemplate">	
+	<put name="title"
+			value="Recently Ended Polls at VotingCentral." />
+		<put name="pageContent"
+			value="/jsp/polls/recEndedPolls.jsp" />
+	</definition>	
+	
+	<definition name="most.emailed.polls" extends="vcTemplate">	
+	<put name="title"
+			value="Most Emailed Polls at VotingCentral." />
+		<put name="pageContent"
+			value="/jsp/polls/mostEmailedPolls.jsp" />
+	</definition>			
+	
+	<definition name="rec.started.polls" extends="vcTemplate">	
+	<put name="title"
+			value="Recently Started Polls at VotingCentral." />
+		<put name="pageContent"
+			value="/jsp/polls/recStartedPolls.jsp" />
+	</definition>	
+	
+		
+	<definition name="myvc.main" extends="vcTemplate">
+		<put name="title" value="Welcome to My VotingCentral" />
+		<put name="pageContent" value="/jsp/myvc/main.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />					
+	</definition>
+	
+	<definition name="myvc.polls" extends="vcTemplate">
+		<put name="title" value="Welcome to My VotingCentral - Polls" />
+		<put name="pageContent" value="/jsp/myvc/polls.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />			
+	</definition>
+	
+	<definition name="myvc.contests" extends="vcTemplate">
+		<put name="title" value="Welcome to My VotingCentral - Contests" />
+		<put name="pageContent"
+			value="/jsp/myvc/contests.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />						
+	</definition>
+	
+	<definition name="myvc.votes" extends="vcTemplate">
+		<put name="title" value="Welcome to My VotingCentral - Votes" />
+		<put name="pageContent" value="/jsp/myvc/votes.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />					
+	</definition>
+
+	<definition name="myvc.poll.comments" extends="vcTemplate">
+		<put name="title"
+			value="Welcome to My VotingCentral - Polls you commented on." />
+		<put name="pageContent" value="/jsp/myvc/pollComments.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />					
+	</definition>
+	
+	<definition name="vc.user.manage.image" extends="vcTemplate">	
+	<put name="title"
+			value="Manage your Picture." />
+		<put name="pageContent"
+			value="/jsp/vcaccount/manageImage.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />				
+	</definition>							
+	
+	<definition name="vc.user.manage.profile" extends="vcTemplate">	
+	<put name="title"
+			value="Manage your Profile." />
+		<put name="pageContent"
+			value="/jsp/vcaccount/manageProfile.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />				
+	</definition>	
+	<definition name="vc.user.manage.passwd" extends="vcTemplate">				
+	<put name="title"
+			value="Manage your Password." />
+		<put name="pageContent"
+			value="/jsp/vcaccount/managePswd.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />				
+	</definition>				
+	<definition name="vc.user.manage.prefs" extends="vcTemplate">				
+	<put name="title"
+			value="Manage your Preferences." />
+		<put name="pageContent"
+			value="/jsp/vcaccount/managePrefs.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />				
+	</definition>	
+	<definition name="vc.user.public.profile" extends="vcTemplate">	
+	<put name="title"
+			value="This should be set in the action class." />
+		<put name="pageContent"
+			value="/jsp/user/vcUserPublic.jsp" />
+	</definition>	
+	<definition name="myvc.account.info" extends="vcTemplate">
+		<put name="title"
+			value="My VotingCentral - Account Information" />
+		<put name="pageContent" value="/jsp/vcaccount/manageRegInfo.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />						
+	</definition>
+	<definition name="vc.user.connect.invite" extends="vcTemplate">
+		<put name="title"
+			value="Invite to Connect to a VotingCentral user." />
+		<put name="pageContent" value="/jsp/connect/requestShow.jsp" />
+	</definition>
+	<definition name="vc.user.connect.invite.sent" extends="vcTemplate">
+		<put name="title"
+			value="Invite to Connect Sent to a VotingCentral user." />
+		<put name="pageContent" value="/jsp/connect/requestSent.jsp" />
+	</definition>	
+	<definition name="vc.user.connect.accept.reject.show" extends="vcTemplate">
+		<put name="title"
+			value="Connection Request from a VotingCentral user." />
+		<put name="pageContent" value="/jsp/connect/acceptRejectShow.jsp" />
+	</definition>		
+	<definition name="vc.user.manage.connects" extends="vcTemplate">
+		<put name="title"
+			value="My VotingCentral - Manage your Connections on VotingCentral." />
+		<put name="pageContent" value="/jsp/connect/manageConnects.jsp" />
+		<put name="leftSideBar" value="/jsp/tiles/myLeftSideBar.jsp" />			
+	</definition>		
+	<definition name="vc.user.all.connects" extends="vcTemplate">
+		<put name="title"
+			value="Manage your Connections on VotingCentral." />
+		<put name="pageContent" value="/jsp/connect/allConnects.jsp" />
+	</definition>		
+	<definition name="vc.winners" extends="vcTemplate">
+		<put name="title"
+			value="Winners at VotingCentral" />
+		<put name="pageContent" value="/jsp/vaco/vcWinners.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />			
+	</definition>		
+	<definition name="vc.leaders" extends="vcTemplate">
+		<put name="title"
+			value="Winners at VotingCentral" />
+		<put name="pageContent" value="/jsp/vaco/vcLeaders.jsp" />
+		<put name="rightSideBar" value="/jsp/include/featuredSponsor.jsp" />			
+	</definition>			
+	<definition name="vc.active.users" extends="vcTemplate">
+		<put name="title"
+			value="Active Users at VotingCentral" />
+		<put name="pageContent" value="/jsp/user/vcActiveUsers.jsp" />
+	</definition>		
+	<definition name="vc.recent.users" extends="vcTemplate">
+		<put name="title"
+			value="Recent Users at VotingCentral" />
+		<put name="pageContent" value="/jsp/user/vcRecentUsers.jsp" />
+	</definition>			
+	<definition name="site.map" extends="vcTemplate">	
+	<put name="title"
+			value="VotingCentral Site Map" />
+		<put name="pageContent"
+			value="/jsp/sitemap/sitemap.jsp" />
+	</definition>		
+	<definition name="error.404" extends="vcTemplate">	
+	<put name="title"
+			value="VotingCentral Page not Found" />
+		<put name="pageContent"
+			value="/jsp/errors/404.jsp" />
+	</definition>
+	<definition name="error.403" extends="vcTemplate">	
+	<put name="title"
+			value="VotingCentral Insufficient access" />
+		<put name="pageContent"
+			value="/jsp/errors/403.jsp" />
+	</definition>
+	<definition name="error.500" extends="vcTemplate">	
+	<put name="title"
+			value="VotingCentral Unexpected Error" />
+		<put name="pageContent"
+			value="/jsp/errors/500.jsp" />
+	</definition>
+	<definition name="flex.featuredPoll" page="/flex/featuredPollsDataService.jsp" />
+</tiles-definitions>

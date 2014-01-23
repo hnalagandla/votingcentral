@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action7" ID="#leftNav"
+  TYPE="action" SUBTYPE="parameter" PATH="/leftNav" SHAPE="32,17,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action7"
+   TITLE="parameter" TYPE="forward" PATH="left.nav" TARGET="page7"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page7" TITLE="left.nav"
+  TYPE="page" SUBTYPE="tile" PATH="left.nav" SHAPE="240,34,0,0"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="action8" ID="#footer"
+  TYPE="action" SUBTYPE="parameter" PATH="/footer" SHAPE="32,129,0,0">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="action8"
+   TITLE="parameter" TYPE="forward" PATH="footer" TARGET="page8"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page8" TITLE="footer"
+  TYPE="page" SUBTYPE="tile" PATH="footer" SHAPE="240,146,0,0"/>
+</PROCESS>

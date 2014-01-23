@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="helpForm"
+			type="org.apache.struts.action.DynaActionForm">
+		</form-bean>
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action path="/leftNav" scope="request"
+			parameter="left.nav" type="org.apache.struts.actions.ForwardAction"
+			validate="false" />			
+		<action path="/footer" scope="request"
+			parameter="footer" type="org.apache.struts.actions.ForwardAction"
+			validate="false" />			
+	</action-mappings>
+</struts-config>

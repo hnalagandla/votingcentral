@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<!-- This is the Struts configuration file for the User (login / passwd / registration) related mappings -->
+
+<struts-config>
+	<!-- form bean definitions -->
+	<form-beans>
+		<form-bean name="regUserFormBean"
+			type="com.votingcentral.forms.user.UserInfoForm" />
+		<form-bean name="loginForm"
+			type="com.votingcentral.forms.VCLoginForm" />
+		<form-bean name="passwdReminderForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="userName" type="java.lang.String" />
+			<form-property name="birthYear" type="java.lang.String" />
+			<form-property name="zipCode" type="java.lang.String" />
+			<form-property name="emailAddress" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="managePswdForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="renteredPassword"
+				type="java.lang.String" />
+			<form-property name="errCode" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="vcUserPPForm"
+			type="com.votingcentral.forms.user.VCUserPublicProfileForm" />
+		<form-bean name="manageMyImageForm"
+			type="com.votingcentral.forms.user.ManageMyImageForm" />
+		<form-bean name="manageMyProfileForm"
+			type="com.votingcentral.forms.user.ManageMyProfileForm" />
+		<form-bean name="managePrefsForm"
+			type="com.votingcentral.forms.user.ManageMyPrefsForm" />
+		<form-bean name="requestConnectForm"
+			type="com.votingcentral.forms.user.connect.RequestConnectForm" />
+		<form-bean name="manageConnectsForm"
+			type="com.votingcentral.forms.user.connect.ManageConnectsForm" />
+		<form-bean name="vcWinnersForm"
+			type="com.votingcentral.forms.vaco.VCVacoWinnersForm" />
+		<form-bean name="vcLeadersForm"
+			type="com.votingcentral.forms.vaco.VCVacoLeadersForm" />			
+	</form-beans>
+	<!-- action mapping definitions -->
+	<action-mappings>
+		<action path="/login/loginUser" name="loginForm" scope="request"
+			parameter="action" type="com.votingcentral.actions.VCLoginAction">
+			<description>Log in a user into VC</description>
+			<forward name="login" path="vc.login" redirect="true" />
+			<forward name="failed" path="/login/loginUser.do" redirect="true" />			
+		</action>
+
+		<action path="/logout" scope="request" parameter="action"
+			type="com.votingcentral.actions.LogOutAction">
+			<description>Log out a user from VC</description>
+			<forward name="home" path="/home.do" redirect="true" />
+		</action>
+
+		<action path="/failedLogin" name="loginForm" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.FailedLoginAction">
+			<forward name="failedLogin" path="vc.failed.login"
+				redirect="false" />
+		</action>
+		<!-- view of the forgot password page -->
+		<action path="/forgotPasswd"
+			type="org.apache.struts.actions.ForwardAction"
+			name="passwdReminderForm" scope="request"
+			parameter="forgot.password" />
+
+		<action path="/remindPasswd" name="passwdReminderForm"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.user.PasswdReminderAction">
+			<forward name="success" path="/passwdSent.do"
+				redirect="true" />
+			<forward name="forgotPswd" path="forgot.password"
+				redirect="false" />
+		</action>
+		<action path="/passwdSent"
+			type="org.apache.struts.actions.ForwardAction"
+			name="passwdReminderForm" scope="request" parameter="passwdsent" />
+
+		<!-- show registration page and redirect to enter code -->
+		<action input="new.user.reg" name="regUserFormBean"
+			path="/regNewUser" scope="request"
+			type="com.votingcentral.actions.user.RegEnterInfoAction"
+			parameter="action">
+			<forward name="register" path="new.user.reg"
+				redirect="false" />
+			<forward name="enterConfCode"
+				path="/regNewUser/enterCode.do?action=showEnterCode"
+				redirect="true" />
+		</action>
+
+		<!-- show enter code page-->
+		<action name="regUserFormBean" path="/regNewUser/enterCode"
+			scope="request"
+			type="com.votingcentral.actions.user.RegConfirmCodeAction"
+			parameter="action">
+			<forward name="showEnterCode" path="new.user.conf.code"
+				redirect="false" />
+		</action>
+		<action name="regUserFormBean" path="/regNewUser/resendConfCode"
+			scope="request"
+			type="com.votingcentral.actions.user.RegConfirmCodeAction"
+			parameter="action">
+			<forward name="enterConfCode"
+				path="/regNewUser/enterCode.do?action=showEnterCode"
+				redirect="true" />
+			<forward name="showEnterCode" path="new.user.conf.code"
+				redirect="false" />
+		</action>
+		<!-- emailed URL. submit -->
+		<action input="new.user.conf.code" name="regUserFormBean"
+			path="/regNewUser/e/confAcct" scope="request" parameter="action"
+			type="com.votingcentral.actions.user.RegConfirmCodeAction">
+			<description>
+				User directly clicks on the link in the email. e = email
+			</description>
+			<forward name="success"
+				path="/regNewUser/confirmed.do?action=showSuccess" redirect="true" />
+			<forward name="failed"
+				path="/regNewUser/enterCode.do?action=showEnterCode"
+				redirect="false" />
+			<forward name="showEnterCode" path="new.user.conf.code"
+				redirect="false" />
+		</action>
+		<!-- confirm code entered from web and submitted -->
+		<action input="new.user.conf.code" name="regUserFormBean"
+			path="/regNewUser/w/confAcct" scope="request" parameter="action"
+			type="com.votingcentral.actions.user.RegConfirmCodeAction">
+			<description>
+				User retrieves conf code from email and enters it on the
+				web page. w = web page.
+			</description>
+			<forward name="success"
+				path="/regNewUser/confirmed.do?action=showSuccess" redirect="true" />
+			<forward name="failed"
+				path="/regNewUser/enterCode.do?action=showEnterCode"
+				redirect="false" />
+			<forward name="showEnterCode" path="new.user.conf.code"
+				redirect="false" />
+		</action>
+
+		<!-- Confirm success page.-->
+		<action input="new.user.confirmed" name="regUserFormBean"
+			path="/regNewUser/confirmed" scope="request" parameter="action"
+			type="com.votingcentral.actions.user.RegConfirmSuccessAction">
+			<forward name="showSuccess" path="new.user.confirmed"
+				redirect="false" />
+			<forward name="enterConfCode"
+				path="/regNewUser/enterCode.do?action=showEnterCode"
+				redirect="true" />
+			<forward name="register" path="/regNewUser.do"
+				redirect="true" />
+		</action>
+
+		<action path="/ChallengeGif"
+			type="com.votingcentral.actions.ConfirmCodeAction" scope="request"
+			name="regUserFormBean">
+			<description>
+				Generate challenge picture with confirmation code on the
+				reg page, to prevent automatic registration.
+			</description>
+		</action>
+		<action path="/vcUser" name="vcUserPPForm"
+			type="com.votingcentral.actions.user.VCUserPublicProfileAction"
+			scope="request" parameter="action">
+			<forward name="vcUserPublic" path="vc.user.public.profile" />
+		</action>
+		<!-- deprecate this after a few days -->
+		<action path="/vcUserPublic" name="vcUserPPForm"
+			type="com.votingcentral.actions.user.VCUserPublicProfileAction"
+			scope="request" parameter="action">
+			<forward name="vcUserPublic" path="vc.user.public.profile" />
+		</action>
+		<action path="/p/user/manageImage" name="manageMyImageForm"
+			type="com.votingcentral.actions.account.ManageMyImageAction"
+			scope="request" parameter="action">
+			<forward name="myimage" path="vc.user.manage.image" />
+			<forward name="self" path="/p/user/manageImage.do" />
+		</action>
+		<action path="/p/user/manageProfile" name="manageMyProfileForm"
+			type="com.votingcentral.actions.account.ManageMyProfileAction"
+			scope="request" parameter="action">
+			<forward name="myprofile" path="vc.user.manage.profile" />
+			<forward name="self" path="/p/user/manageProfile.do" />
+		</action>
+		<action path="/p/user/managePswd" name="managePswdForm"
+			type="com.votingcentral.actions.account.ManageMyPasswordAction"
+			scope="request" parameter="action">
+			<forward name="mypswd" path="vc.user.manage.passwd" />
+			<forward name="self" path="/p/user/managePswd.do" />
+		</action>
+		<action path="/p/user/managePrefs" name="managePrefsForm"
+			type="com.votingcentral.actions.account.ManageMyPrefsAction"
+			scope="request" parameter="action">
+			<forward name="myprefs" path="vc.user.manage.prefs" />
+			<forward name="self" path="/p/user/managePrefs.do" />
+		</action>
+		<action input="myvc.account.info" name="homeFormBean"
+			path="/p/user/edit/myRegInfo" scope="request"
+			type="com.votingcentral.actions.user.MyVCAccountAction">
+			<forward name="newUserReg" path="new.user.reg"
+				redirect="false" />
+		</action>
+		<action path="/p/connectInvite" name="requestConnectForm"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.user.connect.RequestConnectAction">
+			<forward name="connectRequestShow"
+				path="vc.user.connect.invite" redirect="false" />
+			<forward name="connectRequestSent"
+				path="vc.user.connect.invite.sent" redirect="false" />
+		</action>
+		<action path="/p/connect" name="requestConnectForm"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.user.connect.ConnectAcceptRejectAction">
+			<forward name="connectAcceptRejectShow"
+				path="vc.user.connect.accept.reject.show" redirect="false" />
+		</action>
+		<action path="/p/user/manageConnects" name="manageConnectsForm"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.user.connect.ManageConnectsAction">
+			<forward name="manageConnects"
+				path="vc.user.manage.connects" redirect="false" />
+		</action>
+		<action path="/allConnects" name="manageConnectsForm"
+			scope="request" parameter="action"
+			type="com.votingcentral.actions.user.connect.AllConfirmedConnectionsAction">
+			<forward name="allConnects" path="vc.user.all.connects"
+				redirect="false" />
+		</action>
+		<action path="/vcWinners" name="vcWinnersForm" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.vaco.VCVacoWinnersAction">
+			<forward name="vcWinners" path="vc.winners"
+				redirect="false" />
+		</action>
+		<action path="/vcLeaders" name="vcLeadersForm" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.vaco.VCVacoLeadersAction">
+			<forward name="vcLeaders" path="vc.leaders"
+				redirect="false" />
+		</action>		
+		<action path="/activeUsers" name="homeFormBean" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.user.VCActiveUsersAction">
+			<forward name="activeUsers" path="vc.active.users"
+				redirect="false" />
+		</action>
+		<action path="/activeusers" name="homeFormBean" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.user.VCActiveUsersAction">
+			<forward name="activeUsers" path="vc.active.users"
+				redirect="false" />
+		</action>
+		<action path="/recentUsers" name="homeFormBean" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.user.VCRecentUsersAction">
+			<forward name="recentUsers" path="vc.recent.users"
+				redirect="false" />
+		</action>
+		<action path="/recentusers" name="homeFormBean" scope="request"
+			parameter="action"
+			type="com.votingcentral.actions.user.VCRecentUsersAction">
+			<forward name="recentUsers" path="vc.recent.users"
+				redirect="false" />
+		</action>
+	</action-mappings>
+</struts-config>

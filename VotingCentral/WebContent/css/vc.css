@@ -1,0 +1,54 @@
+.heading
+{
+	font:600 14px bold Verdana,Arial,Helvetica;
+	background:#6699CC;
+	bgcolor:#6699CC;
+	color:white;	
+}
+
+.result
+{
+	font:500 13px Verdana,Arial,Helvetica;
+}
+
+.thread
+{
+	font:600 11px; bold Verdana,Arial,Helvetica;
+    	color:black;
+}
+
+.thread_message
+{
+	font:500 11px; Verdana,Arial,Helvetica;
+    	color:black;
+}
+
+.label
+{
+	font:600 16px bold Verdana,Arial,Helvetica;
+    	color:black;
+}
+.fwhite14
+{
+	font:600 14px bold Verdana,Arial,Helvetica;
+	color:white;
+}
+
+.vc_button
+{
+	background: White;
+	background-color: #E0D8E0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #6699CC;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: pointer;
+	font:600 11px; bold Verdana,Arial,Helvetica;
+}
+
+.alignright
+{
+	text-align: right;
+}
